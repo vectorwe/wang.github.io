@@ -2,19 +2,36 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <!-- 适配Dreamweaver CS6视口，移除user-scalable避免预览异常 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>河南特色民俗文化</title>
+    <!-- 强制IE9+渲染模式，适配Dreamweaver预览 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10,IE=11,edge">
+    <title>河南特色民俗文化 - 中原民俗 · 千年传承</title>
+    <!-- 常规引入，移除preload避免Dreamweaver解析异常 -->
     <link href="css/h3.css" type="text/css" rel="stylesheet">
- 	<script src="javaScript/load-html.js"></script>
-   <script src="javaScript/carousel.js"></script>
+    <!-- Dreamweaver CS6兼容：同步加载JS，避免预览时脚本执行异常 -->
+    <script src="js/carousel.js"></script>
+    <script src="js/load-html.js"></script>
+    <!-- SEO优化 -->
+    <meta name="keywords" content="河南民俗,中原民俗,河南非遗,钧瓷,汴绣,豫剧,河南坠子,浚县庙会">
+    <meta name="description" content="探索河南特色民俗文化，涵盖节庆民俗、民间艺术、传统技艺、民俗活动等，领略禹州钧瓷、开封汴绣、豫剧等非遗魅力。">
+    <!-- Dreamweaver CS6布局修复：提前定义基础样式，避免设计视图错乱 -->
+    <style type="text/css">
+        /* 紧急修复Dreamweaver设计视图布局塌陷 */
+        body {margin:0; padding:0; font-family:"宋体","微软雅黑",Arial;}
+        .clearfix {zoom:1;}
+        .clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+        /* 预览时轮播容器占位，避免Dreamweaver设计视图空白 */
+        .carousel-wrap {min-height:450px; background:#f0f0f0; text-align:center; line-height:450px; color:#999; border:1px dashed #ccc;}
+    </style>
 </head>
 <body>
-    <!-- 页面头部 -->
-    <div class="header">
+    <!-- 头部：使用div兼容Dreamweaver CS6对语义标签的弱支持 -->
+    <div class="header clearfix">
         <div class="logo">
             <h1>中原民俗 · 千年传承</h1>
         </div>
-        <!-- 子导航栏 -->
+        <!-- 子导航：保留div结构，增强Dreamweaver编辑体验 -->
         <div class="nav-sub">
             <ul>
                 <li><a href="#festival">节庆民俗</a></li>
@@ -25,8 +42,8 @@
         </div>
     </div>
 
-    <!-- 主导航栏 -->
-    <div class="nav-main">
+    <!-- 主导航：保留div+ul结构，适配Dreamweaver可视化编辑 -->
+    <div class="nav-main clearfix">
         <ul>
             <li><a href="index.html">首页</a></li>
             <li><a href="h1.html">文旅资源</a></li>
@@ -36,33 +53,36 @@
         </ul>
     </div>
 
+    <!-- 轮播图容器：添加占位文本，Dreamweaver设计视图可见 -->
+    <div class="carousel-wrap">
+        轮播图区域（由carousel.js加载）
+    </div>
 
-
-    <!-- 非遗亮点推荐 -->
-    <section class="highlight">
+    <!-- 非遗亮点推荐：简化语义标签，适配Dreamweaver CS6 -->
+    <div class="highlight clearfix">
         <h2>非遗亮点推荐</h2>
-        <div class="highlight-list">
+        <div class="highlight-list clearfix">
             <div class="highlight-item">
-                <img src="images/h3/h3.1.jpg" alt="禹州钧瓷">
+                <img src="images/h3/h3.1.jpg" alt="禹州钧瓷成品" title="禹州钧瓷烧制技艺" />
                 <h3>禹州钧瓷烧制技艺</h3>
                 <p>入窑一色，出窑万彩，中国五大名瓷之一</p>
             </div>
             <div class="highlight-item">
-                <img src="images/h3/h3.2.jpg" alt="开封汴绣">
+                <img src="images/h3/h3.2.jpg" alt="开封汴绣作品" title="开封汴绣" />
                 <h3>开封汴绣</h3>
                 <p>与苏绣、湘绣齐名，针法精湛，色彩艳丽</p>
             </div>
             <div class="highlight-item">
-                <img src="images/h3/h3.3.jpg" alt="河南坠子">
+                <img src="images/h3/h3.3.jpg" alt="河南坠子表演" title="河南坠子" />
                 <h3>河南坠子</h3>
                 <p>中原特色说唱艺术，搭配坠胡伴奏，韵味十足</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 民俗分类详情 -->
+    <!-- 民俗分类详情：全部改用div，适配Dreamweaver CS6设计视图 -->
     <!-- 节庆民俗 -->
-    <section id="festival" class="folklore-section">
+    <div id="festival" class="folklore-section">
         <h2>节庆与信仰民俗</h2>
         <div class="content-list">
             <div class="content-item">
@@ -78,10 +98,10 @@
                 <p>南阳淅川、信阳潢川等地依托水域资源，保留端午赛龙舟、挂艾草、包粽子的传统习俗。</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- 民间艺术 -->
-    <section id="art" class="folklore-section">
+    <div id="art" class="folklore-section">
         <h2>民间艺术民俗</h2>
         <div class="content-list">
             <div class="content-item">
@@ -97,10 +117,10 @@
                 <p>安阳高跷、濮阳东北庄杂技（中国杂技之乡）、周口担经挑（祭祀舞蹈）、开封盘鼓等。</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- 传统技艺 -->
-    <section id="skill" class="folklore-section">
+    <div id="skill" class="folklore-section">
         <h2>传统技艺民俗</h2>
         <div class="content-list">
             <div class="content-item">
@@ -112,10 +132,10 @@
                 <p>洛阳水席制作技艺、开封灌汤包制作技艺、胡辣汤熬制技艺、道口烧鸡制作技艺等。</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- 民俗活动与赛事 -->
-    <section id="event" class="folklore-section">
+    <div id="event" class="folklore-section">
         <h2>民俗活动与赛事</h2>
         <div class="content-list">
             <div class="content-item">
@@ -131,13 +151,23 @@
                 <p>祭祀火神阏伯，是古老的祭祀民俗遗存。</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 底部加载 -->
+    <!-- 底部容器：保留div，适配Dreamweaver CS6 -->
     <div id="footer-container"></div>
-	<script src="javaScript/load-html.js"></script>
-    <script>
-      loadFooter('footer-container'); 
+    
+    <!-- 脚本调用：简化容错，适配Dreamweaver CS6 JS解析 -->
+    <script type="text/javascript">
+        // Dreamweaver CS6兼容：延迟执行，确保DOM加载完成
+        window.onload = function() {
+            try {
+                loadFooter('footer-container');
+            } catch(e) {
+                // 降级显示底部
+                document.getElementById('footer-container').innerHTML = 
+                    '<div class="footer"><p>© 2025 河南数字文旅 · 中原民俗文化传承</p></div>';
+            }
+        };
     </script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* 全局样式重置 + 基础配置（兼容Dreamweaver CS6） */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@
 body {
     background-color: #f7f3ed;
     color: #333;
+    padding-bottom: 2rem; /* 预留底部空间 */
 }
 
 a {
@@ -21,7 +23,7 @@ ul {
     list-style: none;
 }
 
-/* 头部样式保持不变，此处省略 */
+/* 头部样式（优化响应式 + 视觉体验） */
 .header {
     width: 90%;
     max-width: 1500px;
@@ -33,13 +35,15 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: auto; /* 改为auto，适配不同屏幕 */
+    padding: 20px 0;
     margin-bottom: 20px;
 }
 
 .title p {
     font-size: clamp(24px, 4vw, 40px);
     text-align: center;
+    line-height: 1.2;
 }
 
 .title-tag {
@@ -53,6 +57,7 @@ ul {
     height: auto;
     padding: 10px 0;
     margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 增加轻微阴影，提升层次感 */
 }
 
 .nav ul {
@@ -86,7 +91,7 @@ ul {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 简介部分：核心修改区域 */
+/* 简介部分（核心优化：视频放大 + 布局协调） */
 .intro {
     width: 90%;
     max-width: 1500px;
@@ -97,6 +102,9 @@ ul {
     font-size: clamp(24px, 3vw, 36px);
     color: #c85a17;
     margin: 20px 0 30px 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c85a17; /* 增加下划线，提升视觉层次 */
+    display: inline-block;
 }
 
 .intro-content {
@@ -105,18 +113,18 @@ ul {
     gap: 30px;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
-/* 调整文字区域最小宽度，和放大后的视频更协调 */
+/* 文字区域优化 */
 .intro-text {
     flex: 1;
-    /* 原最小宽度500px，改为400px，适配视频放大后的布局 */
     min-width: 400px;
     font-size: clamp(18px, 2vw, 25px);
     line-height: 1.8;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px; /* 增加内边距，提升阅读体验 */
+    border-radius: 12px; /* 优化圆角 */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eee;
@@ -130,27 +138,44 @@ ul {
 .intro-text p {
     background-color: #ffffff;
     margin-bottom: 20px;
+    text-indent: 2em; /* 增加首行缩进，提升排版规范 */
 }
 
-/* 视频区域：核心放大修改 */
+/* 视频区域：核心放大优化 */
 .intro-video {
     flex: 1;
-    /* 原最小宽度400px，改为500px，放大视频区域基础宽度 */
     min-width: 500px;
     text-align: center;
+    padding: 10px;
 }
 
-.intro-video video {
+.intro-video-player {
     width: 100%;
-    /* 原最大宽度400px，改为600px（可根据需求调整，比如700px、800px） */
-    max-width: 600px;
-    /* 新增：设置视频的最小高度，保证显示效果 */
-    min-height: 340px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px; /* 进一步放大视频最大宽度（可根据需求调整为800px） */
+    min-height: 390px; /* 适配700px宽度的16:9比例 */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
 }
 
-/* 特色美食部分样式保持不变，此处省略 */
+.intro-video-player:hover {
+    transform: scale(1.02); /* 轻微缩放，提升交互感 */
+}
+
+/* 视频降级提示 */
+.video-fallback {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    line-height: 2;
+}
+
+.video-fallback a {
+    color: #2a90d9;
+    text-decoration: underline;
+}
+
+/* 特色美食（Grid布局替代Flex，更精准的2*2排布） */
 .food {
     width: 90%;
     max-width: 1500px;
@@ -161,25 +186,30 @@ ul {
     font-size: clamp(24px, 3vw, 36px);
     color: #c85a17;
     margin: 20px 0 30px 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c85a17;
+    display: inline-block;
 }
 
+/* 改用Grid实现2*2卡片排布，更稳定 */
 .food-cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     justify-content: center;
+    padding: 10px;
 }
 
 .food-card {
-    width: clamp(280px, 30vw, 400px);
-    height: auto;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* 保证卡片内元素布局稳定 */
 }
 
 .food-card:hover {
@@ -189,57 +219,86 @@ ul {
 
 .food-img {
     width: 100%;
-    height: 200px;
+    height: 220px; /* 略微增加图片高度，提升视觉效果 */
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover .food-img {
+    transform: scale(1.05); /* 图片悬停缩放 */
 }
 
 .food-card h3 {
-    font-size: 30px;
+    font-size: clamp(24px, 2.5vw, 30px);
     color: #e67e22;
     background-color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    flex-shrink: 0; /* 防止标题被压缩 */
 }
 
 .food-card p {
     font-size: clamp(16px, 2vw, 25px);
     background-color: #ffffff;
+    flex: 1; /* 文字区域自动填充，保证卡片等高 */
 }
 
-/* 页脚样式保持不变 */
-footer {
-    background-color: #8b4513;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 18px;
+/* 回到顶部按钮（统一全站样式） */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #c85a17;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 999;
 }
 
-/* 媒体查询：适配移动端 */
+.back-to-top:hover {
+    background-color: #a84a07;
+}
+
+/* 媒体查询：精准适配不同屏幕 */
+@media (max-width: 1200px) {
+    /* 大屏平板：视频最大宽度调整为600px */
+    .intro-video-player {
+        max-width: 600px;
+        min-height: 340px;
+    }
+}
+
 @media (max-width: 768px) {
     .title-bar {
-        height: auto;
-        padding: 20px 0;
+        padding: 10px 0;
     }
 
+    /* 移动端：文字和视频区域均100%宽度 */
     .intro-text,
     .intro-video {
-        /* 移动端恢复为100%宽度，保证适配 */
         min-width: 100%;
     }
 
-    /* 移动端视频最大宽度调整为90%，避免超出屏幕 */
-    .intro-video video {
+    /* 移动端视频适配 */
+    .intro-video-player {
         max-width: 90%;
         min-height: auto;
     }
 
-    /* 原轮播样式，若有需要可保留 */
-    .carousel-wrap {
-        height: 300px;
-        width: 95%;
+    /* 移动端美食卡片改为1列 */
+    .food-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .food-img {
+        height: 180px; /* 移动端图片高度适配 */
     }
 }
 
@@ -249,16 +308,16 @@ footer {
         margin: 5px 0;
     }
 
-    .carousel-wrap {
-        height: 200px;
-    }
-
     .intro-text {
-        min-width: 100%;
         padding: 15px;
+        font-size: clamp(16px, 2vw, 22px);
     }
 
-    .food-img {
-        height: 160px;
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
     }
 }

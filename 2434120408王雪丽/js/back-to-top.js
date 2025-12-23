@@ -1,40 +1,27 @@
-// 回到顶部按钮：滚动显示，点击回到顶部
-(function() {
+// 回到顶部功能实现
+document.addEventListener('DOMContentLoaded', function() {
     // 创建回到顶部按钮
-    const backBtn = document.createElement('button');
-    backBtn.id = 'back-to-top';
-    backBtn.innerText = '↑';
-    backBtn.style.cssText = `
-        position: fixed;
-        bottom: 50px;
-        right: 50px;
-        width: 40px;
-        height: 40px;
-        border: none;
-        border-radius: 50%;
-        background: #333;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        display: none;
-        z-index: 999;
-    `;
-    document.body.appendChild(backBtn);
-
-    // 滚动事件：显示/隐藏按钮
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTop';
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.textContent = '↑';
+    backToTopBtn.style.display = 'none';
+    document.body.appendChild(backToTopBtn);
+    
+    // 滚动事件监听
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backBtn.style.display = 'block';
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
         } else {
-            backBtn.style.display = 'none';
+            backToTopBtn.style.display = 'none';
         }
     });
-
-    // 点击事件：回到顶部（平滑滚动）
-    backBtn.addEventListener('click', function() {
+    
+    // 点击事件
+    backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-})();
+});

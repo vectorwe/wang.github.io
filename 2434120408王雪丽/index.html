@@ -5,68 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>河南旅游推荐</title>
   <link href="css/index.css" type="text/css" rel="stylesheet">
-  <!-- 先加载carousel.js，再加载其他脚本，确保Carousel类先被定义 -->
-  <script src="javaScript/carousel.js"></script>
-  <script src="javaScript/load-html.js"></script>
 </head>
 <body>
-  <!-- 头部区域 -->
+  <!-- 头部导航 -->
   <div class="hand">
     <div class="title">
       <div class="hand-title">
-        <p><i class="title_i">逐鹿中原</i>&nbsp; -- &nbsp;河南行</p>
+        <img src="images/logo.png" alt="河南旅游logo" class="logo" width="50" height="50" />
+        <p><i class="title_i">逐鹿中原</i> -- 河南行</p>
       </div>
       <div class="but">
         <a href="javascript:void(0);" class="login-btn" id="loginBtn">登录</a>
         <a href="zhuce.html" class="zhuce-btn">注册</a>
       </div>
     </div>
-
-    <!-- 导航栏 -->
-    <div class="ul">
-      <ul>
+    <div class="nav-wrap">
+      <ul class="nav-list">
         <li><a href="index.html" class="active">首页</a></li>
         <li><a href="h1.html">文旅资源</a></li>
         <li><a href="h2.html">非遗文化</a></li>
         <li><a href="h3.html">特色民俗</a></li>
         <li><a href="h4.html">数字文旅体验</a></li>
+        <li><a href="video.html">视频欣赏</a></li>
       </ul>
     </div>
   </div>
 
-  <!-- 轮播图容器：添加了#my-carousel ID，这是关键！ -->
+  <!-- 轮播图容器 -->
   <div class="bodd">
     <div id="my-carousel"></div>
   </div>
 
-  <!-- 轮播图初始化脚本：移到容器之后，确保容器已存在 -->
-  <script>
-      window.onload = function() {
-          // 图片列表（注意替换为实际存在的图片路径）
-          const imgList = [
-              { src: 'images/index/i1.jpg', alt: '少林寺' },
-              { src: 'images/index/i2.jpg', alt: '龙门石窟' },
-              { src: 'images/index/i3.jpg', alt: '清明上河园' },
-              { src: 'images/index/i4.jpg', alt: '云台山' },
-              { src: 'images/index/i5.jpg', alt: '老君山' },
-              { src: 'images/index/i6.jpg', alt: '殷墟' },
-              { src: 'images/index/i7.jpg', alt: '郑州' },
-              { src: 'images/index/i8.jpg', alt: '洛阳' },
-              { src: 'images/index/i9.jpg', alt: '开封' },
-              { src: 'images/index/i10.jpg', alt: '焦作' },
-              { src: 'images/index/i11.jpg', alt: '南阳' },
-              { src: 'images/index/i12.jpg', alt: '安阳' }
-          ];
-
-          // 修正：高度直接传'50vw'，不要加px（后续JS会处理）
-          new Carousel('#my-carousel', imgList, { width: '80%', height: '35vw' });
-      };
-  </script>
-
-  <!-- 主体内容（优化结构，统一卡片布局） -->
+  <!-- 主体内容（2*3卡片核心布局） -->
   <div class="body">
-    <div class="body1">
-      <p class="body_p">热门旅游推荐</p>
+    <!-- 热门旅游推荐 -->
+    <section class="body1">
+      <h2 class="body_p">热门旅游推荐</h2>
       <div class="card-container">
         <div class="recommend-card">
           <a href="http://www.shaolin.org.cn/" class="recommend-link" target="_blank" rel="noopener noreferrer">
@@ -105,10 +79,11 @@
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="body1">
-      <p class="body_p">热门旅游地区</p>
+    <!-- 热门旅游地区 -->
+    <section class="body1">
+      <h2 class="body_p">热门旅游地区</h2>
       <div class="card-container">
         <div class="area-card">
           <a href="https://wgl.zhengzhou.gov.cn/" class="area-link" target="_blank" rel="noopener noreferrer">
@@ -147,17 +122,13 @@
           </a>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 
- <!--footer-->
-    <div id="footer-container"></div>
-    <script src="javaScript/load-html.js"></script>
-    <script>
-      loadFooter('footer-container'); 
-    </script>
+  <!-- 底部容器 -->
+  <div id="footer-container"></div>
 
-  <!-- 登录弹窗（优化交互，保留初级JS逻辑） -->
+  <!-- 登录弹窗 -->
   <div class="login-modal" id="loginModal">
     <div class="modal-content">
       <div class="form-item">
@@ -172,40 +143,95 @@
     </div>
   </div>
 
-  <script>
-    // 登录弹窗交互（黑马初级JS：事件绑定、DOM操作）
-    const loginBtn = document.getElementById('loginBtn');
-    const loginModal = document.getElementById('loginModal');
-    const modalLoginBtn = document.getElementById('modalLoginBtn');
-
-    // 打开弹窗
-    loginBtn.addEventListener('click', function() {
-      loginModal.style.display = 'flex';
-    });
-
-    // 点击登录按钮关闭弹窗
-    modalLoginBtn.addEventListener('click', function() {
-      // 简单验证（初级JS：表单验证）
-      const phone = document.getElementById('phone').value;
-      const password = document.getElementById('password').value;
-      if (!phone) {
-        alert('请输入手机号！');
-        return;
+  <!-- 脚本加载区 -->
+  <script src="js/carousel.js" type="text/javascript"></script>
+  <script src="js/load-html.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      // 轮播图初始化
+      var imgList = [
+        { src: 'images/index/i1.jpg', alt: '少林寺' },
+        { src: 'images/index/i2.jpg', alt: '龙门石窟' },
+        { src: 'images/index/i3.jpg', alt: '清明上河园' },
+        { src: 'images/index/i4.jpg', alt: '云台山' },
+        { src: 'images/index/i5.jpg', alt: '老君山' },
+        { src: 'images/index/i6.jpg', alt: '殷墟' },
+        { src: 'images/index/i7.jpg', alt: '郑州' },
+        { src: 'images/index/i8.jpg', alt: '洛阳' },
+        { src: 'images/index/i9.jpg', alt: '开封' },
+        { src: 'images/index/i10.jpg', alt: '焦作' },
+        { src: 'images/index/i11.jpg', alt: '南阳' },
+        { src: 'images/index/i12.jpg', alt: '安阳' }
+      ];
+      if (typeof Carousel === 'function') {
+        new Carousel('#my-carousel', imgList, { width: '80%', height: '35vw' });
+      } else {
+        console.warn('轮播图初始化失败：未找到Carousel类');
       }
-      if (!password) {
-        alert('请输入密码！');
-        return;
-      }
-      loginModal.style.display = 'none';
-      alert('登录成功！');
-    });
 
-    // 点击弹窗外部关闭
-    loginModal.addEventListener('click', function(e) {
-      if (e.target === loginModal) {
-        loginModal.style.display = 'none';
+      // 加载底部
+      if (typeof loadFooter === 'function') {
+        loadFooter('footer-container');
+      } else {
+        alert('加载底部失败：未找到loadFooter函数！');
       }
-    });
+
+      // 登录弹窗交互
+      var loginBtn = document.getElementById('loginBtn');
+      var loginModal = document.getElementById('loginModal');
+      var modalLoginBtn = document.getElementById('modalLoginBtn');
+      var phoneInput = document.getElementById('phone');
+      var passwordInput = document.getElementById('password');
+
+      if (loginBtn) {
+        loginBtn.onclick = function() {
+          loginModal.style.display = 'flex';
+          phoneInput.focus();
+        };
+      }
+
+      if (modalLoginBtn) {
+        modalLoginBtn.onclick = function() {
+          var phone = phoneInput.value.trim();
+          var password = passwordInput.value.trim();
+          var phoneReg = /^1[3-9]\d{9}$/;
+          if (!phone) {
+            alert('请输入手机号！');
+            phoneInput.focus();
+            return;
+          }
+          if (!phoneReg.test(phone)) {
+            alert('请输入正确的11位手机号！');
+            phoneInput.focus();
+            return;
+          }
+          if (!password) {
+            alert('请输入密码！');
+            passwordInput.focus();
+            return;
+          }
+          loginModal.style.display = 'none';
+          alert('登录成功！');
+          phoneInput.value = '';
+          passwordInput.value = '';
+        };
+      }
+
+      if (loginModal) {
+        loginModal.onclick = function(e) {
+          if (e.target === loginModal) {
+            loginModal.style.display = 'none';
+          }
+        };
+      }
+
+      document.onkeydown = function(e) {
+        e = e || window.event;
+        if (e.keyCode === 27 && loginModal.style.display === 'flex') {
+          loginModal.style.display = 'none';
+        }
+      };
+    };
   </script>
 </body>
 </html>

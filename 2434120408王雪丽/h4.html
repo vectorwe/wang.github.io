@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>河南数字文旅体验网 - 数字中原·云游河南</title>
-    <!-- 分离CSS文件，移除内联样式 -->
-    <link href="css/h4.css" type="text/css" rel="stylesheet">
-     <!-- 引入外部JS文件（按执行顺序引入） -->
-    <script src="javaScript/carousel.js"></script>
-    <script src="javaScript/load-html.js"></script>
-    <!-- 引入字体图标（简化版，替代fa，避免外部依赖） -->
-   
-      
+    <!-- 引入独立CSS文件 -->
+    <link href="css/h4.css" rel="stylesheet" type="text/css">
+    <!-- 引入外部JS -->
+    <script src="js/carousel.js" type="text/javascript"></script>
+    <script src="js/load-html.js" type="text/javascript"></script>
 </head>
 <body>
     <!-- 页面头部：LOGO + 导航栏 -->
-    <div class="header">
+    <header class="header">
         <div class="logo">
             <h1><i class="icon icon-landmark"></i> 河南数字文旅体验网</h1>
         </div>
-    </div>
+    </header>
 
-    <!-- 主导航栏（与之前页面的导航结构统一） -->
-    <div class="nav-wrap">
+    <!-- 主导航栏 -->
+    <nav class="nav-wrap">
         <ul class="nav-list">
             <li><a href="index.html">首页</a></li>
             <li><a href="h1.html">文旅资源</a></li>
@@ -30,17 +27,18 @@
             <li><a href="h3.html">特色民俗</a></li>
             <li><a href="h4.html" class="active">数字文旅体验项目</a></li>
         </ul>
-    </div>
+    </nav>
 
-    
+   
+
     <!-- 核心板块1：虚拟漫游专区 -->
-    <section id="roam" class="roam-section">
+    <section id="roam" class="roam-section section">
         <div class="section-title">
             <h2><i class="icon icon-vr"></i> 云游河南·360°虚拟漫游</h2>
             <p>点击下方景点，进入沉浸式全景游览，感受河南文旅魅力</p>
         </div>
         <div class="roam-list">
-            <div class="roam-card">
+            <div class="roam-card card">
                 <img src="images/longmen.jpg" alt="龙门石窟">
                 <div class="card-content">
                     <h3>龙门石窟</h3>
@@ -49,22 +47,22 @@
                     <a href="https://www.720yun.com/t/4cb28jpgxnw?scene_id=356163" target="_blank" class="btn">立即漫游</a>
                 </div>
             </div>
-            <div class="roam-card">
+            <div class="roam-card card">
                 <img src="images/h4/h4.2.jpg" alt="清明上河园">
                 <div class="card-content">
                     <h3>清明上河园</h3>
                     <span class="tag">360°全景漫游</span>
                     <p>还原《清明上河图》的大宋盛景，沉浸式感受宋代市井文化</p>
-                    <a href= target="https://www.720yun.com/t/dcvkuw7h51e?scene_id=39821405" class="btn">立即漫游</a>
+                    <a href="https://www.720yun.com/t/dcvkuw7h51e?scene_id=39821405" target="_blank" class="btn">立即漫游</a>
                 </div>
             </div>
-            <div class="roam-card">
+            <div class="roam-card card">
                 <img src="images/h4/h4.3.jpg" alt="少林寺">
                 <div class="card-content">
                     <h3>少林寺</h3>
                     <span class="tag">360°全景漫游</span>
                     <p>天下第一名刹，体验少林功夫与禅意山水的完美融合</p>
-                    <a href=""https://www.720yun.com/t/70vkuw1wzqy?scene_id=40632014" target="_blank" class="btn">立即漫游</a>
+                    <a href="https://www.720yun.com/t/70vkuw1wzqy?scene_id=40632014" target="_blank" class="btn">立即漫游</a>
                 </div>
             </div>
         </div>
@@ -78,8 +76,8 @@
         </div>
     </section>
 
-    <!-- 核心板块2：数字藏品展示区（添加初级筛选JS） -->
-    <section id="collection" class="collection-section">
+    <!-- 核心板块2：数字藏品展示区 -->
+    <section id="collection" class="collection-section section">
         <div class="section-title">
             <h2><i class="icon icon-gem"></i> 中原文创·数字藏品馆</h2>
             <p>基于河南非遗、古迹、民俗打造的数字文创，收藏中原文化之美</p>
@@ -91,7 +89,7 @@
             <button class="tab-btn" data-type="folk">民俗藏品</button>
         </div>
         <div class="collection-list">
-            <div class="collection-card" data-type="intangible">
+            <div class="collection-card card" data-type="intangible">
                 <img src="images/h4/h4.4.jpg" alt="钧瓷莲瓣瓶数字藏品">
                 <div class="card-content">
                     <h3>钧瓷·莲瓣瓶数字藏品</h3>
@@ -100,10 +98,9 @@
                         <span><i class="icon icon-calendar"></i> 2024.05发行</span>
                         <span><i class="icon icon-users"></i> 河南文旅厅×数字平台</span>
                     </div>
-                
                 </div>
             </div>
-            <div class="collection-card" data-type="historic">
+            <div class="collection-card card" data-type="historic">
                 <img src="images/h4/h4.5.jpg" alt="龙门石窟卢舍那大佛数字典藏">
                 <div class="card-content">
                     <h3>龙门石窟卢舍那大佛数字典藏</h3>
@@ -112,10 +109,9 @@
                         <span><i class="icon icon-calendar"></i> 2024.03发行</span>
                         <span><i class="icon icon-users"></i> 龙门石窟景区×数字平台</span>
                     </div>
-                    
                 </div>
             </div>
-            <div class="collection-card" data-type="folk">
+            <div class="collection-card card" data-type="folk">
                 <img src="images/h4/h4.6.jpg" alt="朱仙镇年画·门神数字文创">
                 <div class="card-content">
                     <h3>朱仙镇年画·门神数字文创</h3>
@@ -124,14 +120,13 @@
                         <span><i class="icon icon-calendar"></i> 2024.01发行</span>
                         <span><i class="icon icon-users"></i> 开封文旅局×数字平台</span>
                     </div>
-                   
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 辅助板块：河南文旅亮点速览 -->
-    <section id="highlight" class="highlight-section">
+    <section id="highlight" class="highlight-section section">
         <div class="section-title">
             <h2><i class="icon icon-star"></i> 河南文旅亮点速览</h2>
         </div>
@@ -154,12 +149,91 @@
         </div>
     </section>
 
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
     <!-- 底部加载 -->
     <div id="footer-container"></div>
-<script src="javaScript/load-html.js"></script>
-    <script>
-      loadFooter('footer-container'); 
+
+    <!-- 页面专属JS -->
+    <script type="text/javascript">
+        // 页面加载完成后执行
+        window.onload = function() {
+            // 1. 初始化轮播图
+            if (typeof Carousel !== 'undefined') {
+                var carouselImgs = [
+                    { src: "images/h4/carousel1.jpg", alt: "河南数字文旅全景" },
+                    { src: "images/h4/carousel2.jpg", alt: "龙门石窟数字漫游" },
+                    { src: "images/h4/carousel3.jpg", alt: "清明上河园沉浸式体验" }
+                ];
+                new Carousel('#henan-carousel', carouselImgs, {
+                    width: '100%',
+                    height: '100%',
+                    autoPlayTime: 5000,
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                });
+            }
+
+            // 2. 数字藏品筛选功能
+            var tabBtns = document.querySelectorAll('.tab-btn');
+            var collectionCards = document.querySelectorAll('.collection-card');
+            
+            tabBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // 移除所有按钮active类
+                    tabBtns.forEach(function(b) {
+                        b.classList.remove('active');
+                    });
+                    // 当前按钮激活
+                    this.classList.add('active');
+                    // 筛选逻辑
+                    var type = this.getAttribute('data-type');
+                    collectionCards.forEach(function(card) {
+                        if (type === 'all' || card.getAttribute('data-type') === type) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 3. 加载底部
+            if (typeof loadFooter === 'function') {
+                loadFooter('footer-container');
+            } else {
+                console.warn('加载底部失败：未找到loadFooter函数');
+            }
+
+            // 4. 回到顶部功能
+            var backToTopBtn = document.getElementById('backToTop');
+            // 监听滚动显示/隐藏按钮
+            window.onscroll = function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'block';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            };
+            // 点击回到顶部
+            backToTopBtn.onclick = function() {
+                if ('scrollBehavior' in document.documentElement.style) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // 兼容低版本浏览器
+                    var timer = setInterval(function() {
+                        window.scrollTo(0, window.pageYOffset - 50);
+                        if (window.pageYOffset <= 0) {
+                            clearInterval(timer);
+                        }
+                    }, 10);
+                }
+            };
+        };
     </script>
-   
 </body>
 </html>

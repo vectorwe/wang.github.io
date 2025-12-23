@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 全局样式 */
+/* 全局样式重置 + 基础配置（兼容Dreamweaver CS6） */
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +7,35 @@
     font-family: "华文行楷", STKaiti, SimSun, serif;
 }
 
+/* 全局容器统一：解决内容溢出、对齐问题 */
+:root {
+    --primary-color: #d2691e; /* 主色调-棕橙 */
+    --secondary-color: #3498db; /* 辅助色-天蓝 */
+    --bg-color: #f9f6f0; /* 背景色 */
+    --white-color: #fff; /* 白色 */
+    --text-color: #333; /* 文字主色 */
+    --text-light: #666; /* 文字浅色 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05); /* 小阴影 */
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1); /* 中阴影 */
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.1); /* 大阴影 */
+    --radius-sm: 8px; /* 小圆角 */
+    --radius-md: 10px; /* 中圆角 */
+    --radius-lg: 20px; /* 大圆角 */
+    --gap-sm: 10px; /* 小间距 */
+    --gap-md: 20px; /* 中间距 */
+    --gap-lg: 30px; /* 大间距 */
+}
+
 body {
-    background-color: #f9f6f0;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-bottom: 2rem; /* 预留底部空间 */
+    line-height: 1.6; /* 全局行高统一 */
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 
@@ -22,489 +43,631 @@ ul {
     list-style: none;
 }
 
-/* 头部样式 */
+/* ==========================================
+   头部布局优化：更紧凑、居中、响应式
+   ========================================== */
 .header {
-    width: 90%;
-    max-width: 1500px;
+    width: 95%; /* 扩大宽度，减少两侧留白 */
+    max-width: 1600px; /* 提升最大宽度，适配大屏 */
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 15px 0; /* 减少上下内边距，更紧凑 */
 }
 
 .title {
-    height: 100px;
+    height: auto;
     text-align: center;
-    font-size: 50px;
-    line-height: 100px;
-    margin-bottom: 20px;
+    font-size: clamp(28px, 4vw, 48px); /* 微调字号范围 */
+    line-height: 1.2;
+    padding: 15px 0;
+    margin-bottom: 15px; /* 减少底部间距 */
+    font-weight: bold; /* 标题加粗 */
 }
 
 .title-tag {
-    font-size: 40px;
+    font-size: clamp(22px, 3.5vw, 38px);
+    color: var(--primary-color);
+    margin-right: 10px; /* 增加与副标题间距 */
 }
 
 .nav {
-    background-color: #fff;
-    border-radius: 20px;
+    background-color: var(--white-color);
+    border-radius: var(--radius-lg);
     height: auto;
-    padding: 10px 0;
-    margin-bottom: 20px;
+    padding: 8px 0; /* 减少内边距 */
+    margin-bottom: 25px; /* 增加与下方内容间距 */
+    box-shadow: var(--shadow-sm);
 }
 
 .nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #fff;
+    gap: 5px; /* 增加li之间的间距控制 */
 }
 
 .nav li {
-    background-color: #fff;
-    width: clamp(120px, 15vw, 200px);
-    height: 60px;
-    line-height: 60px;
+    background-color: var(--white-color);
+    width: clamp(100px, 12vw, 180px); /* 缩小导航项宽度，更紧凑 */
+    height: 55px; /* 降低高度 */
+    line-height: 55px;
     text-align: center;
-    margin: 10px 20px;
+    margin: 5px 10px; /* 减少左右间距 */
 }
 
 .nav a {
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    font-size: clamp(18px, 2vw, 30px);
+    border-radius: var(--radius-md);
+    font-size: clamp(16px, 1.8vw, 28px); /* 微调字号 */
 }
 
 .nav a:hover,
 .nav a.active {
-    color: #fff;
-    background-color: #3498db;
+    color: var(--white-color);
+    background-color: var(--secondary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 轮播图样式 */
-.carousel-wrap {
-    width: 80%;
-    height: 450px;
-    max-height: 500px;
-    margin: 0 auto 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 非遗总览样式 */
+/* ==========================================
+   非遗总览布局：文字与数据区更协调
+   ========================================== */
 .overview {
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto 50px;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto 60px; /* 增加底部间距，区分模块 */
 }
 
 .overview h2 {
-    font-size: clamp(24px, 3vw, 30px);
-    margin: 20px 0 30px 0;
-    padding-left: 20px;
-    border-left: 4px solid #d2691e;
+    font-size: clamp(22px, 2.8vw, 34px);
+    margin: 0 0 30px 15px; /* 减少顶部间距，增加左侧间距 */
+    padding-left: 18px;
+    border-left: 4px solid var(--primary-color);
+    color: #8b4513;
+    font-weight: bold;
 }
 
 .overview-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-}
-
-.overview-text {
-    flex: 1;
-    min-width: 500px;
-    line-height: 1.8;
-    font-size: clamp(18px, 2vw, 25px);
-}
-
-.overview-text p {
-    margin-bottom: 20px;
-}
-
-.overview-data {
-    flex: 1;
-    min-width: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--gap-lg);
+    align-items: stretch; /* 改为拉伸对齐，使文字和数据区高度一致 */
     justify-content: center;
 }
 
+.overview-text {
+    flex: 1 1 450px; /* 弹性增长+基础宽度，更灵活 */
+    font-size: clamp(17px, 1.9vw, 24px);
+    background-color: var(--white-color);
+    padding: 25px; /* 增加内边距，提升阅读体验 */
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 文字垂直居中 */
+}
+
+.overview-text p {
+    margin-bottom: 25px;
+    text-indent: 2em;
+}
+
+.overview-text p:last-child {
+    margin-bottom: 0; /* 最后一个段落取消底部间距 */
+}
+
+.overview-text strong {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.overview-data {
+    flex: 1 1 450px; /* 与文字区对称 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自适应列数 */
+    gap: var(--gap-md);
+    align-content: center; /* 数据项垂直居中 */
+}
+
 .data-item {
-    width: 250px;
-    height: 150px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 140px; /* 降低高度，更紧凑 */
+    background-color: var(--white-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .data-item:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .data-item h3 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: clamp(26px, 3.8vw, 34px);
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .data-item p {
-    font-size: 30px;
+    font-size: clamp(17px, 1.9vw, 28px);
     text-align: center;
 }
 
-/* 国家级非遗项目样式 */
+/* ==========================================
+   非遗项目卡片：强制2行3列布局（核心修改）
+   ========================================== */
 .heritage-list {
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto 50px;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto 60px;
 }
 
 .heritage-list h2 {
-    font-size: clamp(24px, 3vw, 30px);
-    margin: 20px 0 30px 0;
-    padding-left: 20px;
-    border-left: 4px solid #d2691e;
+    font-size: clamp(22px, 2.8vw, 34px);
+    margin: 0 0 30px 15px;
+    padding-left: 18px;
+    border-left: 4px solid var(--primary-color);
+    color: #8b4513;
+    font-weight: bold;
 }
 
+/* 核心修改：强制3列布局，固定2行（6个卡片刚好2行3列） */
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 强制3列，无论屏幕大小 */
+    grid-template-rows: repeat(2, 1fr);    /* 强制2行 */
+    gap: var(--gap-lg);
+    padding: 0 10px;
+    max-width: 1500px; /* 限制最大宽度，避免卡片过宽 */
+    margin: 0 auto;    /* 居中显示 */
 }
 
 .card {
-    width: clamp(300px, 30vw, 400px);
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease;
+    background-color: var(--white-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 25px; /* 增加内边距 */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 强制卡片高度一致 */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* 增大hover位移，更明显 */
+    box-shadow: var(--shadow-lg);
 }
 
-.card img {
+.card-img {
     width: 100%;
-    height: 200px;
+    height: 220px; /* 增加图片高度，视觉更饱满 */
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.03); /* 增大缩放比例 */
 }
 
 .card h3 {
-    font-size: 28px;
+    font-size: clamp(22px, 2.8vw, 26px);
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .card p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    font-size: clamp(15px, 1.7vw, 17px);
+    line-height: 1.7; /* 增加行高，提升阅读体验 */
+    margin-bottom: 20px;
+    flex: 1; /* 文字区域填充剩余空间，保证标签位置一致 */
 }
 
 .card-tag {
     display: inline-block;
-    padding: 5px 15px;
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 16px;
+    padding: 6px 18px; /* 增大内边距 */
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border-radius: var(--radius-lg);
+    font-size: 15px;
+    align-self: flex-start;
+    font-weight: 500;
 }
 
-/* 非遗传承人样式 */
+/* ==========================================
+   传承人区域：布局更舒展，信息层级更清晰
+   ========================================== */
 .inheritor {
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto 50px;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto 60px;
 }
 
 .inheritor h2 {
-    font-size: clamp(24px, 3vw, 30px);
-    margin: 20px 0 30px 0;
-    padding-left: 20px;
-    border-left: 4px solid #d2691e;
+    font-size: clamp(22px, 2.8vw, 34px);
+    margin: 0 0 30px 15px;
+    padding-left: 18px;
+    border-left: 4px solid var(--primary-color);
+    color: #8b4513;
+    font-weight: bold;
 }
 
 .inheritor-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px; /* 增大传承人项间距 */
 }
 
 .inheritor-item {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    gap: 25px; /* 增大头像与信息间距 */
+    background-color: var(--white-color);
+    border-radius: var(--radius-md);
+    padding: 25px; /* 增加内边距 */
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    align-items: center;
 }
 
 .inheritor-item:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
-.inheritor-item img {
-    width: 200px;
-    height: 200px;
+.inheritor-img {
+    width: 220px; /* 增大头像尺寸 */
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3498db;
+    border: 4px solid var(--secondary-color); /* 增粗边框 */
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.inheritor-item:hover .inheritor-img {
+    transform: scale(1.08); /* 增大头像缩放 */
 }
 
 .inheritor-info {
-    flex: 1;
-    min-width: 500px;
+    flex: 1 1 400px; /* 增大基础宽度，信息区更宽 */
 }
 
 .inheritor-info h3 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: clamp(22px, 2.8vw, 26px);
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .info-tag {
     display: inline-block;
-    padding: 3px 12px;
+    padding: 4px 15px; /* 增大内边距 */
     background-color: #e3f2fd;
-    color: #3498db;
-    border-radius: 15px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    color: var(--secondary-color);
+    border-radius: 18px; /* 增大圆角 */
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 500;
 }
 
 .inheritor-info p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    font-size: clamp(15px, 1.7vw, 17px);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.inheritor-info p:last-child {
+    margin-bottom: 0;
 }
 
 .slogan {
     font-style: italic;
-    color: #666;
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 16px; /* 固定标语字号 */
 }
 
-/* 非遗活态传承样式 */
+/* ==========================================
+   活态传承区域：三列布局更均衡，视觉更统一
+   ========================================== */
 .experience {
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto 50px;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto 60px;
 }
 
 .experience h2 {
-    font-size: clamp(24px, 3vw, 30px);
-    margin: 20px 0 30px 0;
-    padding-left: 20px;
-    border-left: 4px solid #d2691e;
+    font-size: clamp(22px, 2.8vw, 34px);
+    margin: 0 0 30px 15px;
+    padding-left: 18px;
+    border-left: 4px solid var(--primary-color);
+    color: #8b4513;
+    font-weight: bold;
 }
 
 .experience-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 与非遗卡片基础宽度一致 */
+    gap: var(--gap-lg);
+    padding: 0 10px;
 }
 
 .experience-item {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background-color: var(--white-color);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    height: 100%; /* 强制高度一致 */
+    display: flex;
+    flex-direction: column;
 }
 
 .experience-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
 
 .experience-item h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #3498db;
+    font-size: clamp(19px, 2.3vw, 22px);
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e3f2fd;
+    font-weight: bold;
 }
 
 .experience-item ul {
     list-style: disc inside;
+    flex: 1; /* 填充剩余空间，使列表垂直居中 */
 }
 
 .experience-item ul li {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    font-size: clamp(15px, 1.7vw, 17px);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.experience-item ul li:last-child {
+    margin-bottom: 0;
 }
 
 .activity-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px; /* 增大体验项间距 */
+    flex: 1;
 }
 
 .activity-item {
     background-color: #f8f9fa;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px; /* 增加内边距 */
+    border-radius: var(--radius-sm);
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateX(8px); /* 增大右移距离 */
+    box-shadow: var(--shadow-sm); /* 增加hover阴影 */
 }
 
 .activity-item h4 {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: clamp(17px, 1.9vw, 19px);
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .activity-item p {
-    font-size: 16px;
+    font-size: clamp(14px, 1.5vw, 15px);
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
 .cultural-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px; /* 增大文创项间距 */
     justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .cultural-item {
     text-align: center;
+    transition: transform 0.3s ease;
+    width: 160px; /* 固定文创项宽度，更规整 */
+}
+
+.cultural-item:hover {
+    transform: translateY(-8px);
 }
 
 .cultural-item img {
-    width: 150px;
-    height: 150px;
+    width: 160px; /* 增大文创图片尺寸 */
+    height: 160px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 8px;
-}
-
-.cultural-item p {
-    font-size: 18px;
-}
-
-/* 非遗影像样式 */
-.video-section {
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto 50px;
-}
-
-.video-section h2 {
-    font-size: clamp(24px, 3vw, 30px);
-    margin: 20px 0 30px 0;
-    padding-left: 20px;
-    border-left: 4px solid #d2691e;
-}
-
-.video-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.video-player {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.video-player video {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 8px;
-}
-
-.video-desc {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-.video-gallery {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.video-gallery h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #3498db;
-}
-
-.gallery-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.gallery-list img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease;
 }
 
-.gallery-list img:hover {
+.cultural-item:hover img {
     transform: scale(1.05);
 }
 
-/* 底部样式 */
-footer {
-    background-color: #8b4513;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 18px;
+.cultural-item p {
+    font-size: clamp(15px, 1.7vw, 17px);
+    color: #555;
+    font-weight: 500;
 }
 
-/* 响应式适配 */
+/* ==========================================
+   回到顶部按钮：样式优化，交互更友好
+   ========================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 增强阴影 */
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: none;
+}
+
+.back-to-top:hover {
+    background-color: #b35817;
+    transform: translateY(-3px); /* hover轻微上移 */
+}
+
+/* ==========================================
+   响应式适配：精准适配不同屏幕尺寸
+   ========================================== */
+/* 大屏平板/小屏电脑 (1200px以下) */
+@media (max-width: 1200px) {
+    .header {
+        width: 98%;
+    }
+    .overview, .heritage-list, .inheritor, .experience {
+        width: 98%;
+    }
+    .inheritor-img {
+        width: 200px;
+        height: 200px;
+    }
+    .cultural-item {
+        width: 150px;
+    }
+    .cultural-item img {
+        width: 150px;
+        height: 150px;
+    }
+    /* 小屏电脑仍保持3列，仅缩小间距 */
+    .card-container {
+        gap: var(--gap-md);
+        max-width: 1200px;
+    }
+}
+
+/* 平板 (768px以下) */
 @media (max-width: 768px) {
-    .overview-text,
+    .overview-content {
+        gap: var(--gap-md);
+    }
+    .overview-text, .overview-data {
+        flex: 1 1 100%; /* 强制1列 */
+    }
     .overview-data {
-        min-width: 100%;
+        grid-template-columns: repeat(2, 1fr); /* 平板保持2列 */
     }
-
+    .data-item {
+        height: 120px;
+    }
+    .inheritor-item {
+        padding: 20px;
+    }
+    .inheritor-img {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto; /* 头像居中 */
+    }
     .inheritor-info {
-        min-width: 100%;
+        flex: 1 1 100%;
     }
-
-    .carousel-wrap {
-        height: 300px;
-        width: 95%;
+    .back-to-top {
+        bottom: 2rem;
+        right: 2rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
     }
-
-    .title {
-        font-size: clamp(30px, 5vw, 50px);
-        height: auto;
-        line-height: 1.2;
-        padding: 20px 0;
+    /* 平板改为2列（仍保证2行，6个卡片→3行2列，视觉更适配） */
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
 }
 
+/* 手机 (480px以下) */
 @media (max-width: 480px) {
+    .header {
+        padding: 10px 0;
+    }
+    .title {
+        padding: 10px 0;
+        font-size: clamp(24px, 5vw, 40px);
+    }
     .nav li {
         width: 100%;
-        margin: 5px 0;
+        margin: 3px 0;
+        height: 50px;
+        line-height: 50px;
     }
-
+    .overview-data {
+        grid-template-columns: 1fr; /* 手机1列 */
+    }
     .data-item {
-        width: 100%;
+        height: 110px;
     }
-
-    .carousel-wrap {
+    /* 手机强制1列，保证显示完整 */
+    .card-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        padding: 0 5px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card-img {
         height: 200px;
+    }
+    .inheritor-img {
+        width: 150px;
+        height: 150px;
+    }
+    .cultural-item {
+        width: 100%; /* 文创项全屏宽 */
+    }
+    .cultural-item img {
+        width: 120px;
+        height: 120px;
+    }
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* 极小屏手机 (375px以下) */
+@media (max-width: 375px) {
+    .overview-text, .inheritor-info {
+        padding: 15px;
+    }
+    .card, .experience-item {
+        padding: 15px;
+    }
+    .card-img {
+        height: 180px;
     }
 }

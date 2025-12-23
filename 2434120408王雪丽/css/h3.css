@@ -1,20 +1,40 @@
 @charset "utf-8";
-/* 全局样式重置 */
+/* 适配Dreamweaver CS6的河南民俗页面样式 */
+/* 核心：兼容IE9+、Dreamweaver设计视图、可视化编辑 */
+
+/* ========== 基础重置（Dreamweaver CS6适配） ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/* Dreamweaver CS6核心修复：清除浮动 */
+.clearfix {
+    zoom: 1; /* IE/Dreamweaver触发hasLayout */
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 body {
-    font-family: "华文行楷", STKaiti, SimSun, serif;
+    font-family: "宋体", "Microsoft Yahei", "STKaiti", serif; /* 优先宋体，适配Dreamweaver */
     color: #333;
     background-color: #f9f6f0;
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
     color: #333;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -22,156 +42,132 @@ ul {
     list-style: none;
 }
 
-/* 头部样式 */
+img {
+    border: 0; /* Dreamweaver CS6移除图片默认边框 */
+    max-width: 100%;
+}
+
+/* ========== 头部样式（Dreamweaver布局优化） ========== */
 .header {
     background-color: #d2691e;
     padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: #fff;
-    flex-wrap: wrap;
+    min-height: 80px;
+    /* Dreamweaver兼容：放弃flex，改用浮动 */
 }
-
+.logo {
+    float: left;
+    line-height: 80px; /* 垂直居中 */
+}
 .logo h1 {
-    font-size: clamp(20px, 3vw, 28px);
-    background-color: transparent;
+    font-size: 28px; /* 固定字号，避免Dreamweaver预览异常 */
+    font-size: clamp(20px, 3vw, 28px)\9;
 }
-
-.nav-sub ul {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: transparent;
+.nav-sub {
+    float: right;
+    line-height: 80px;
 }
-
-.nav-sub li {
-    background-color: transparent;
+.nav-sub ul li {
+    display: inline-block;
+    margin-left: 30px;
 }
-
 .nav-sub a {
     color: #fff;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: 18px;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: transparent;
+    display: inline-block;
 }
-
 .nav-sub a:hover {
     background-color: #8b4513;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
 }
 
-/* 主导航样式 */
+/* ========== 主导航样式（Dreamweaver可视化优化） ========== */
 .nav-main {
     background-color: #fff;
     border-radius: 20px;
     max-width: 1500px;
     width: 90%;
-    height: auto;
     margin: 15px auto;
-    font-size: clamp(16px, 2vw, 30px);
     padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center; /* 替代flex，适配Dreamweaver */
 }
-
-.nav-main ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    background-color: #fff;
-}
-
-.nav-main li {
-    background-color: #fff;
-    text-align: center;
-    width: clamp(120px, 15vw, 200px);
+.nav-main ul li {
+    display: inline-block; /* 可视化编辑友好 */
+    width: 150px; /* 固定宽度，避免布局错乱 */
     height: 60px;
     line-height: 60px;
-    margin: 10px 0;
+    margin: 0 10px;
+    text-align: center;
 }
-
 .nav-main a {
     display: block;
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    background-color: #fff;
 }
-
-.nav-main a:hover,
-.nav-main a.active {
+.nav-main a:hover, .nav-main a.active {
     color: #fff;
     background-color: #3498db;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* 轮播图容器样式 */
+/* ========== 轮播图容器（Dreamweaver占位优化） ========== */
 .carousel-wrap {
     width: 80%;
     height: 450px;
-    max-height: 500px;
     margin: 20px auto;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #f5f5f5; /* 占位背景 */
 }
 
-/* 非遗亮点推荐样式 */
+/* ========== 非遗亮点推荐（Dreamweaver浮动布局） ========== */
 .highlight {
     padding: 30px 50px;
     text-align: center;
 }
-
 .highlight h2 {
-    font-size: clamp(24px, 4vw, 32px);
+    font-size: 32px;
     color: #8b4513;
     margin-bottom: 30px;
 }
-
 .highlight-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
+    width: 100%;
 }
-
 .highlight-item {
-    width: clamp(250px, 30vw, 300px);
+    width: 30%;
+    float: left;
+    margin: 0 1.5%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
-
-.highlight-item:hover {
-    transform: translateY(-5px);
-}
-
 .highlight-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
+    -o-object-fit: cover;
 }
-
 .highlight-item h3 {
     font-size: 20px;
     color: #d2691e;
     margin-bottom: 10px;
 }
-
 .highlight-item p {
     line-height: 1.6;
     color: #666;
 }
 
-/* 民俗分类详情样式 */
+/* ========== 民俗分类详情（Dreamweaver布局优化） ========== */
 .folklore-section {
     padding: 30px 50px;
     margin: 0 auto 30px;
@@ -179,104 +175,95 @@ ul {
     width: 90%;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-
 .folklore-section h2 {
-    font-size: clamp(22px, 3vw, 28px);
+    font-size: 28px;
     color: #8b4513;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid #f9f6f0;
 }
-
-.content-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .content-item {
     padding: 15px;
     border-left: 4px solid #d2691e;
     background-color: #f9f6f0;
     border-radius: 0 5px 5px 0;
+    margin-bottom: 20px;
 }
-
 .content-item h3 {
     font-size: 20px;
     color: #d2691e;
     margin-bottom: 10px;
 }
-
 .content-item p {
     line-height: 1.8;
     color: #555;
     text-indent: 2em;
 }
 
-/* 底部样式 */
-footer {
+/* ========== 底部样式（Dreamweaver兼容） ========== */
+.footer {
     background-color: #8b4513;
     color: #fff;
     text-align: center;
     padding: 20px;
     margin-top: 30px;
     font-size: 18px;
+    clear: both; /* 关键：清除所有浮动 */
 }
 
-footer p {
-
-    background-color: #8b4513;
-}
-
-/* 响应式适配 */
+/* ========== 响应式适配（Dreamweaver兼容版） ========== */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        gap: 10px;
         padding: 15px 20px;
+        min-height: auto;
     }
-
-    .nav-sub ul {
-        gap: 15px;
+    .logo, .nav-sub {
+        float: none;
+        line-height: normal;
+        text-align: center;
+        margin-bottom: 10px;
     }
-
-    .highlight {
-        padding: 20px 20px;
+    .nav-sub ul li {
+        margin: 0 10px;
     }
-
-    .folklore-section {
-        padding: 20px 20px;
-        width: 95%;
+    .highlight-item {
+        width: 45%; /* 平板端两列 */
     }
-
     .carousel-wrap {
-        height: 300px;
         width: 95%;
+        height: 300px;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-main {
-        padding: 10px 0;
+    .nav-main ul li {
+        width: 45%; /* 移动端两列 */
+        margin: 5px 0;
     }
-
-    .nav-main li {
-        height: 50px;
-        line-height: 50px;
+    .highlight-item {
+        width: 100%; /* 移动端单列 */
+        margin: 0 0 20px 0;
     }
-
-    .folklore-section {
-        margin: 0 10px 20px;
-        padding: 15px 15px;
-    }
-
-    .highlight-item img {
-        height: 150px;
-    }
-
     .carousel-wrap {
         height: 200px;
     }
+    .folklore-section {
+        padding: 15px;
+        width: 95%;
+    }
+}
+
+/* ========== Dreamweaver设计视图美化 ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d2691e;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background-color: #f9f6f0;
 }

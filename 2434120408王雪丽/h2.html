@@ -3,18 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>河南非遗文化 - 千年传承，活态新生</title>
+<!-- 提前加载基础样式，避免闪屏 -->
 <link href="css/h2.css" type="text/css" rel="stylesheet">
-<script src="javaScript/carousel.js"></script>
-<script src="javaScript/load-html.js"></script>
-
 </head>
 <body>
-    <!-- 页面头部区域 -->
+    <!-- 页面头部区域（语义化 + 统一风格） -->
     <div class="header">
         <div class="title">
             <p><span class="title-tag">逐鹿中原</span> -- 河南非遗文化</p>
         </div>
-        <!-- 主导航栏 -->
+        <!-- 主导航栏（补充完整导航） -->
         <div class="nav">
             <ul>
                 <li><a href="index.html">首页</a></li>
@@ -22,11 +20,12 @@
                 <li><a href="h2.html" class="active">非遗文化</a></li>
                 <li><a href="h3.html">特色民俗</a></li>
                 <li><a href="h4.html">数字文旅体验</a></li>
+                <li><a href="video.html">视频欣赏</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- 非遗总览区域 -->
+    <!-- 非遗总览区域（结构优化 + 交互增强） -->
     <section class="overview">
         <h2>河南非遗总览</h2>
         <div class="overview-content">
@@ -55,42 +54,42 @@
         </div>
     </section>
 
-    <!-- 国家级非遗项目区域 -->
+    <!-- 国家级非遗项目区域（Grid布局 + 懒加载） -->
     <section class="heritage-list">
         <h2>国家级代表性非遗项目</h2>
         <div class="card-container">
             <div class="card">
-                <img src="images/h2/h2.1.jpg" alt="豫剧">
+                <img src="images/h2/h2.1.jpg" alt="豫剧" class="card-img" loading="lazy">
                 <h3>豫剧</h3>
                 <p>豫剧又称河南梆子，是中国五大戏曲剧种之一，发源于河南开封，唱腔铿锵大气、抑扬有度，表演质朴通俗，代表剧目有《穆桂英挂帅》《花木兰》等。</p>
                 <span class="card-tag">传统戏剧</span>
             </div>
             <div class="card">
-                <img src="images/h2/h2.2.jpg" alt="朱仙镇木版年画">
+                <img src="images/h2/h2.2.jpg" alt="朱仙镇木版年画" class="card-img" loading="lazy">
                 <h3>朱仙镇木版年画</h3>
                 <p>朱仙镇木版年画是中国木版年画的鼻祖，始于唐，兴于宋，以构图饱满、线条粗犷、色彩艳丽著称，题材多为门神、瑞兽、戏曲故事。</p>
                 <span class="card-tag">传统美术</span>
             </div>
             <div class="card">
-                <img src="images/h2/h2.3.jpg" alt="少林功夫">
+                <img src="images/h2/h2.3.jpg" alt="少林功夫" class="card-img" loading="lazy">
                 <h3>少林功夫</h3>
                 <p>少林功夫发源于登封嵩山少林寺，是中国武术的重要流派，以刚劲有力、禅武合一为特色，包含拳术、器械、功法等数百种技艺。</p>
                 <span class="card-tag">传统体育</span>
             </div>
             <div class="card">
-                <img src="images/h2/h2.4.jpg" alt="唐三彩烧制技艺">
+                <img src="images/h2/h2.4.jpg" alt="唐三彩烧制技艺" class="card-img" loading="lazy">
                 <h3>唐三彩烧制技艺</h3>
                 <p>唐三彩是唐代低温彩釉陶器的总称，以洛阳为主要产地，以黄、绿、白三色为主，造型生动，釉色绚丽，烧制技艺包含选料、制坯、施釉、烧制等多道工序。</p>
                 <span class="card-tag">传统技艺</span>
             </div>
             <div class="card">
-                <img src="images/h2/h2.5.jpg" alt="钧瓷烧制技艺">
+                <img src="images/h2/h2.5.jpg" alt="钧瓷烧制技艺" class="card-img" loading="lazy">
                 <h3>钧瓷烧制技艺</h3>
                 <p>钧瓷产于禹州神垕镇，是宋代五大名瓷之一，以“入窑一色，出窑万彩”的窑变效果著称，烧制技艺复杂，被誉为“中国五大名瓷之首”。</p>
                 <span class="card-tag">传统技艺</span>
             </div>
             <div class="card">
-                <img src="images/h2/h2.6.jpg" alt="河南坠子">
+                <img src="images/h2/h2.6.jpg" alt="河南坠子" class="card-img" loading="lazy">
                 <h3>河南坠子</h3>
                 <p>河南坠子是河南本土的传统曲艺形式，以坠胡为主要伴奏乐器，唱腔婉转悠扬，题材多为民间故事、历史传说，流行于河南及周边地区。</p>
                 <span class="card-tag">传统音乐</span>
@@ -98,12 +97,12 @@
         </div>
     </section>
 
-    <!-- 非遗传承人区域 -->
+    <!-- 非遗传承人区域（布局优化 + 交互增强） -->
     <section class="inheritor">
         <h2>非遗传承人</h2>
         <div class="inheritor-list">
             <div class="inheritor-item">
-                <img src="images/h2/h2.7.jpg" alt="常香玉">
+                <img src="images/h2/h2.7.jpg" alt="常香玉" class="inheritor-img" loading="lazy">
                 <div class="inheritor-info">
                     <h3>常香玉</h3>
                     <span class="info-tag">豫剧传承人 · 国家级</span>
@@ -112,7 +111,7 @@
                 </div>
             </div>
             <div class="inheritor-item">
-                <img src="images/h2/h2.8.jpg" alt="任鹤林">
+                <img src="images/h2/h2.8.jpg" alt="任鹤林" class="inheritor-img" loading="lazy">
                 <div class="inheritor-info">
                     <h3>任鹤林</h3>
                     <span class="info-tag">朱仙镇木版年画传承人 · 国家级</span>
@@ -121,7 +120,7 @@
                 </div>
             </div>
             <div class="inheritor-item">
-                <img src="images/h2/h2.9.jpg" alt="释永信">
+                <img src="images/h2/h2.9.jpg" alt="释永信" class="inheritor-img" loading="lazy">
                 <div class="inheritor-info">
                     <h3>释永信</h3>
                     <span class="info-tag">少林功夫传承人 · 国家级</span>
@@ -132,7 +131,7 @@
         </div>
     </section>
 
-    <!-- 非遗活态传承区域 -->
+    <!-- 非遗活态传承区域（Grid优化 + 视觉增强） -->
     <section class="experience">
         <h2>非遗活态传承与体验</h2>
         <div class="experience-content">
@@ -170,26 +169,56 @@
                 <h3>非遗文创产品</h3>
                 <div class="cultural-list">
                     <div class="cultural-item">
-                        <img src="images/h2/h2.10.jpg">
+                        <img src="images/h2/h2.10.jpg" alt="唐三彩文创摆件" loading="lazy">
                         <p>唐三彩文创摆件</p>
                     </div>
                     <div class="cultural-item">
-                        <img src="images/h2/h2.11.jpg">
+                        <img src="images/h2/h2.11.jpg" alt="汴绣丝巾/饰品" loading="lazy">
                         <p>汴绣丝巾/饰品</p>
                     </div>
                     <div class="cultural-item">
-                        <img src="images/h2/h2.12.jpg" alt="木版年画文创">
+                        <img src="images/h2/h2.12.jpg" alt="木版年画文创" loading="lazy">
                         <p>朱仙镇年画文创笔记本</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- <div id="footer-container"></div>
-    <script src="javaScript/load-html.js"></script>
-    <script>
-      loadFooter('footer-container'); 
-    </script>
 
+    <!-- 页脚容器 -->
+    <div id="footer-container"></div>
+
+    <!-- 回到顶部按钮（新增） -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <!-- 脚本加载区（统一放到底部，提升性能） -->
+    <script src="js/load-html.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        // 1. 加载底部（兼容ES5 + 容错）
+        window.onload = function() {
+            // 加载底部
+            if (typeof loadFooter === 'function') {
+                loadFooter('footer-container');
+            } else {
+                alert('加载底部失败：未找到loadFooter函数！');
+            }
+
+            // 2. 回到顶部功能（补充实现）
+            var backToTopBtn = document.getElementById('backToTop');
+            window.onscroll = function() {
+                backToTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+            };
+            backToTopBtn.onclick = function() {
+                if ('scrollBehavior' in document.documentElement.style) {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                } else {
+                    var timer = setInterval(function() {
+                        window.scrollTo(0, window.pageYOffset - 50);
+                        if (window.pageYOffset <= 0) clearInterval(timer);
+                    }, 10);
+                }
+            };
+        }
+    </script>
 </body>
 </html>

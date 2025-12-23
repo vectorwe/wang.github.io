@@ -3,11 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>逐鹿中原 -- 文旅资源</title>
- <link href="css/h1.css" type="text/css" rel="stylesheet">
- <script src="javaScript/load-html.js"></script>
-   <script src="javaScript/carousel.js"></script>
+<!-- 提前加载基础样式，避免闪屏 -->
+<link href="css/h1.css" type="text/css" rel="stylesheet">
+<!-- 预加载脚本，提升执行效率 -->
+<script src="js/load-html.js" type="text/javascript"></script>
 </head>
 <body>
+    <!-- 头部（语义化 + 统一风格） -->
     <div class="header">
         <div class="title-bar">
             <div class="title">
@@ -21,11 +23,12 @@
                 <li><a href="h2.html">非遗文化</a></li>
                 <li><a href="h3.html">特色民俗</a></li>
                 <li><a href="h4.html">数字文旅体验</a></li>
+                <li><a href="video.html">视频欣赏</a></li> <!-- 补充完整导航 -->
             </ul>
         </div>
-        
     </div>
 
+    <!-- 河南简介（结构优化 + 交互增强） -->
     <div class="intro">
         <h2>| 河南简介</h2>
         <div class="intro-content">
@@ -34,49 +37,95 @@
                 <p>从黄河之滨的璀璨文明，到嵩山之巅的少林禅武，从龙门石窟的千年石刻，到清明上河园的宋韵风华，河南以其厚重的历史、秀美的山水和独特的民俗，吸引着八方来客。</p>
             </div>
             <div class="intro-video">
-                <video controls poster="https://img0.baidu.com/it/u=1340921622,3893321279&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=225">
-                    <source src="media/河南形象宣传片，让世界认识了一个全新的河南！_高清1080P在线观看平台_腾讯视频.mp4" type="video/mp4">
+                <!-- 优化视频属性 + 降级提示 -->
+                <video controls 
+                       poster="images/h1/video_cover.jpg" 
+                       preload="metadata"
+                       class="intro-video-player">
+                    <source src="media/河南形象宣传片.mp4" type="video/mp4">
+                    <div class="video-fallback">
+                        您的浏览器不支持HTML5视频播放，请升级浏览器！<br>
+                        <a href="media/河南形象宣传片.mp4" download="河南形象宣传片.mp4">点击下载视频</a>
+                    </div>
                 </video>
             </div>
         </div>
     </div>
 
+    <!-- 特色美食（Grid布局 + 性能优化） -->
     <div class="food">
         <h2>| 特色美食</h2>
         <div class="food-cards">
-            <!-- 胡辣汤卡片：添加img标签 -->
+            <!-- 胡辣汤卡片 -->
             <div class="food-card">
-                <img src="images/h1/h1.1.jpg" alt="胡辣汤" class="food-img">
+                <img src="images/h1/h1.1.jpg" alt="胡辣汤" class="food-img" loading="lazy">
                 <h3>胡辣汤</h3>
                 <p>河南经典早餐，以胡椒、辣椒为核心调料，搭配牛肉、粉条、木耳等食材熬制，口感麻辣鲜香，暖身开胃，是河南人清晨的“味觉标配”。</p>
             </div>
-            <!-- 河南烩面卡片：添加img标签 -->
+            <!-- 河南烩面卡片 -->
             <div class="food-card">
-                <img src="images/h1/h1.2.jpg" alt="河南烩面" class="food-img">
+                <img src="images/h1/h1.2.jpg" alt="河南烩面" class="food-img" loading="lazy">
                 <h3>河南烩面</h3>
                 <p>河南十大经典名菜之一，以高筋面粉手工抻拉成面，搭配浓白羊肉汤，辅以粉丝、香菜、枸杞，汤鲜面韧，是河南面食文化的代表。</p>
             </div>
-            <!-- 开封灌汤包卡片：添加img标签 -->
+            <!-- 开封灌汤包卡片 -->
             <div class="food-card">
-                <img src="images/h1/h1.3.jpg" alt="开封灌汤包" class="food-img">
+                <img src="images/h1/h1.3.jpg" alt="开封灌汤包" class="food-img" loading="lazy">
                 <h3>开封灌汤包</h3>
                 <p>开封特色小吃，皮薄如纸、馅大汁多，以猪后腿肉为馅，加骨汤冻调制，咬开时灌汤流油，鲜香可口，是豫菜“细作”风格的体现。</p>
             </div>
-            <!-- 道口烧鸡卡片：添加img标签 -->
+            <!-- 道口烧鸡卡片 -->
             <div class="food-card">
-                <img src="images/h1/h1.4.jpg" alt="道口烧鸡" class="food-img">
+                <img src="images/h1/h1.4.jpg" alt="道口烧鸡" class="food-img" loading="lazy">
                 <h3>道口烧鸡</h3>
                 <p>产自安阳滑县道口，以“色、香、味、烂”著称，鸡皮金黄、肉质酥烂，经十多种香料卤制，是河南传统卤味名吃，距今已有三百余年历史。</p>
             </div>
         </div>
     </div>
 
-   <!--footer-->
+    <!-- 页脚（统一加载） -->
     <div id="footer-container"></div>
-    <script src="javaScript/load-html.js"></script>
-    <script>
-      loadFooter('footer-container'); 
-    </script>
 
+    <!-- 脚本统一放到底部，提升性能 -->
+    <script type="text/javascript">
+        // 页面加载完成后执行
+        window.onload = function() {
+            // 加载底部（增加容错）
+            if (typeof loadFooter === 'function') {
+                loadFooter('footer-container');
+            } else {
+                alert('加载底部失败：未找到loadFooter函数！');
+            }
+
+            // 可选：添加回到顶部按钮（统一全站交互）
+            var backToTopBtn = document.createElement('button');
+            backToTopBtn.id = 'backToTop';
+            backToTopBtn.className = 'back-to-top';
+            backToTopBtn.textContent = '↑';
+            backToTopBtn.style.display = 'none';
+            document.body.appendChild(backToTopBtn);
+
+            // 滚动监听显示/隐藏回到顶部按钮
+            window.onscroll = function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'block';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            };
+
+            // 点击回到顶部（兼容旧浏览器）
+            backToTopBtn.onclick = function() {
+                if ('scrollBehavior' in document.documentElement.style) {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                } else {
+                    var timer = setInterval(function() {
+                        window.scrollTo(0, window.pageYOffset - 50);
+                        if (window.pageYOffset <= 0) clearInterval(timer);
+                    }, 10);
+                }
+            };
+        };
+    </script>
 </body>
 </html>

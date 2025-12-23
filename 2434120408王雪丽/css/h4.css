@@ -1,376 +1,444 @@
+/* ==================== 全局样式重置 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "华文行楷", SimSun, "Microsoft YaHei", sans-serif;
+}
 
-        /* 全局样式重置（黑马初级知识，统一盒模型） */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "华文行楷", SimSun, serif;
-            background-color: #f7f4f2;
-        }
+body {
+    background-color: #f7f4f2;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
 
-        a {
-            text-decoration: none;
-            color: #000;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
 
-        a:hover {
-            color: #09f;
-        }
+ul, li {
+    list-style: none;
+}
 
-        /* 头部样式（整合LOGO和导航，与之前页面风格统一） */
-        .header {
-            width: 100%;
-            padding: 20px 50px;
-            text-align: center;
-        }
+img {
+    display: block;
+    max-width: 100%;
+}
 
-        .logo h1 {
-            font-size: 36px;
-            color: #d2691e; /* 延续钧瓷红主色调 */
-            margin-bottom: 15px;
-        }
+/* ==================== 字体图标样式 ==================== */
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    margin-left: .2em;
+    text-align: center;
+    font-style: normal;
+    vertical-align: middle;
+}
 
-        /* 主导航样式（与之前页面的ul导航风格统一） */
-        .ul {
-            background-color: #fff;
-            border-radius: 20px;
-            width: 1500px;
-            height: 100px;
-            margin: 0 auto;
-            font-size: 30px;
-            clear: both;
-        }
+/* 自定义图标字符 */
+.icon-landmark:before { content: "🏯"; }
+.icon-vr:before { content: "🥽"; }
+.icon-gem:before { content: "💎"; }
+.icon-star:before { content: "⭐"; }
+.icon-mountain:before { content: "⛰️"; }
+.icon-university:before { content: "🏛️"; }
+.icon-music:before { content: "🎵"; }
+.icon-tag:before { content: "🏷️"; }
+.icon-calendar:before { content: "📅"; }
+.icon-users:before { content: "👥"; }
+.icon-mouse:before { content: "🖱️"; }
+.icon-headphones:before { content: "🎧"; }
+.icon-mobile:before { content: "📱"; }
 
-        .ul li,
-        .ul a {
-            background-color: #fff;
-        }
+/* ==================== 通用布局样式 ==================== */
+/* 通用板块容器 */
+.section {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
 
-        li {
-            background-color: #fff;
-            text-align: center;
-            list-style: none;
-            width: 200px;
-            height: 60px;
-            margin: 20px 40px;
-            float: left;
-            line-height: 40px;
-        }
+/* 板块标题通用样式 */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        li a:hover,
-        li a.active {
-            color: #fff;
-            background-color: #3498db; /* 统一的hover蓝色 */
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: block;
-        }
+.section-title h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    color: #8b4513;
+    margin-bottom: 10px;
+}
 
-        /* 轮播图容器样式（适配页面布局） */
-        .tu {
-            width: 80%;
-            height: 450px;
-            margin: 30px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+.section-title p {
+    font-size: clamp(16px, 2vw, 20px);
+    color: #666;
+}
 
-        /* 虚拟漫游板块样式（与之前页面的卡片风格统一） */
-        .roam-section {
-            width: 1400px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+/* 通用卡片样式 */
+.card {
+    width: clamp(280px, 100%, 400px);
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
 
-        .section-title h2 {
-            font-size: 32px;
-            color: #8b4513; /* 棕色调，延续风格 */
-            margin-bottom: 10px;
-        }
+.card-content {
+    padding: 20px;
+    background-color: #fff;
+}
 
-        .section-title p {
-            font-size: 20px;
-            color: #666;
-        }
+.card-content h3 {
+    font-size: clamp(20px, 2.5vw, 24px);
+    color: #d2691e;
+    margin-bottom: 12px;
+}
 
-        .roam-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px; /* 统一卡片间距 */
-        }
+/* ==================== 头部样式 ==================== */
+.header {
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+}
 
-        .roam-card {
-            width: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease; /* 统一的hover过渡 */
-        }
+.logo h1 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #d2691e;
+    font-weight: normal;
+}
 
-        .roam-card:hover {
-            transform: translateY(-5px); /* 与之前页面的hover上移一致 */
-        }
+/* ==================== 导航样式 ==================== */
+.nav-wrap {
+    width: 95%;
+    max-width: 1500px;
+    margin: 0 auto 20px;
+}
 
-        .roam-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background-color: #fff;
-        }
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-        .card-content {
-            padding: 20px;
-            background-color: #fff;
-        }
+.nav-list li {
+    width: clamp(120px, 15vw, 200px);
+    height: 60px;
+    margin: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .card-content h3 {
-            font-size: 24px;
-            color: #d2691e;
-            margin-bottom: 10px;
-            background-color: #fff;
-        }
+.nav-list a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: clamp(18px, 2vw, 28px);
+    border-radius: 10px;
+}
 
-        .tag {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #e3f2fd;
-            color: #3498db;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-bottom: 10px;
-            background-color: #fff;
-        }
+.nav-list a:hover,
+.nav-list a.active {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .card-content p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #666;
-            margin-bottom: 20px;
-            background-color: #fff;
-        }
+/* ==================== 轮播图样式 ==================== */
+#carousel-section {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            border-radius: 5px;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-            background-color: #fff;
-            background-color: #3498db;
-        }
+#henan-carousel {
+    width: 100%;
+    height: clamp(250px, 40vw, 450px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
-        .btn:hover {
-            background-color: #2980b9;
-            color: #fff;
-        }
+/* ==================== 虚拟漫游板块 ==================== */
+.roam-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
 
-        .roam-guide {
-            width: 100%;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
+.roam-card img {
+    width: 100%;
+    height: clamp(180px, 60vw, 250px);
+    object-fit: cover;
+}
 
-        .roam-guide h4 {
-            font-size: 22px;
-            color: #8b4513;
-            margin-bottom: 15px;
-            background-color: #fff;
-        }
+.tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #e3f2fd;
+    color: #3498db;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 
-        .roam-guide ul {
-            list-style: none;
-            background-color: #fff;
-        }
+.card-content p {
+    font-size: clamp(16px, 2vw, 18px);
+    color: #666;
+    margin-bottom: 20px;
+}
 
-        .roam-guide li {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 10px;
-            background-color: #fff;
-            float: none;
-            width: auto;
-            height: auto;
-            text-align: left;
-            margin: 0 0 10px 0;
-        }
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
 
-        /* 数字藏品板块样式（复用卡片布局，统一风格） */
-        .collection-section {
-            width: 1400px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+.btn:hover {
+    background-color: #2980b9;
+}
 
-        .filter-tabs {
-            text-align: center;
-            margin-bottom: 30px;
-            background-color: #f7f4f2;
-        }
+.roam-guide {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
 
-        .tab-btn {
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            background-color: #fff;
-            color: #333;
-            margin: 0 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+.roam-guide h4 {
+    font-size: 22px;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
 
-        .tab-btn.active {
-            background-color: #3498db;
-            color: #fff;
-        }
+.roam-guide li {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
 
-        .tab-btn:hover {
-            background-color: #e3f2fd;
-        }
+/* ==================== 数字藏品板块 ==================== */
+.filter-tabs {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .collection-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
+.tab-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    margin: 0 8px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        .collection-card {
-            width: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+.tab-btn.active {
+    background-color: #3498db;
+    color: #fff;
+}
 
-        .collection-card:hover {
-            transform: translateY(-5px);
-        }
+.tab-btn:hover:not(.active) {
+    background-color: #e3f2fd;
+}
 
-        .collection-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background-color: #fff;
-        }
+.collection-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
-        .card-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 10px;
-            background-color: #fff;
-        }
+.collection-card img {
+    width: 100%;
+    height: clamp(180px, 60vw, 250px);
+    object-fit: cover;
+}
 
-        .card-info span {
-            font-size: 16px;
-            color: #666;
-            background-color: #fff;
-        }
+.card-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
 
-        /* 文旅亮点板块样式（简化布局，统一风格） */
-        .highlight-section {
-            width: 1400px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+.card-info span {
+    font-size: 16px;
+    color: #666;
+}
 
-        .highlight-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
+/* ==================== 文旅亮点板块 ==================== */
+.highlight-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
-        .highlight-item {
-            width: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+.highlight-item {
+    width: clamp(280px, 100%, 400px);
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
 
-        .highlight-item:hover {
-            transform: translateY(-5px);
-        }
+.highlight-item:hover {
+    transform: translateY(-6px);
+}
 
-        .highlight-item i {
-            font-size: 40px;
-            color: #d2691e;
-            margin-bottom: 20px;
-            background-color: #fff;
-        }
+.highlight-item i {
+    font-size: 40px;
+    color: #d2691e;
+    margin-bottom: 20px;
+}
 
-        .highlight-item h3 {
-            font-size: 24px;
-            color: #8b4513;
-            margin-bottom: 15px;
-            background-color: #fff;
-        }
+.highlight-item h3 {
+    font-size: 24px;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
 
-        .highlight-item p {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-            background-color: #fff;
-        }
+.highlight-item p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
 
-        /* 底部样式（统一页面底部风格） */
-        footer {
-            background-color: #8b4513;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            font-size: 18px;
-        }
+/* ==================== 回到顶部按钮 ==================== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+    z-index: 999;
+}
 
-        /* 响应式适配（黑马初级的media query，适配移动端） */
-        @media (max-width: 768px) {
-            .ul {
-                width: 90%;
-                height: auto;
-                padding: 10px;
-            }
+.back-to-top:hover {
+    background-color: #2980b9;
+}
 
-            .ul li {
-                width: 120px;
-                margin: 10px 5px;
-                font-size: 20px;
-            }
+/* ==================== 底部样式 ==================== */
+footer {
+    background-color: #8b4513;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 18px;
+    width: 100%;
+}
 
-            .roam-section,
-            .collection-section,
-            .highlight-section {
-                width: 90%;
-            }
+/* ==================== 响应式适配 ==================== */
+/* 平板设备 */
+@media (max-width: 768px) {
+    .nav-list li {
+        width: clamp(100px, 40%, 180px);
+        margin: 5px 8px;
+    }
 
-            .roam-card,
-            .collection-card,
-            .highlight-item {
-                width: 100%;
-            }
+    .roam-guide li {
+        font-size: 16px;
+    }
 
-            .logo h1 {
-                font-size: 28px;
-            }
+    .tab-btn {
+        margin: 5px;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
 
-            .section-title h2 {
-                font-size: 26px;
-			}
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* 手机设备 */
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 5px;
+    }
+
+    .nav-list {
+        border-radius: 10px;
+        padding: 5px 0;
+    }
+
+    .nav-list li {
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    .section {
+        width: 98%;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .highlight-item i {
+        font-size: 30px;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+}
