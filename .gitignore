@@ -1,0 +1,68 @@
+# 编辑器/IDE配置文件
+# VS Code
+.vscode/
+*.code-workspace
+# WebStorm/IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+# Vim
+*.swp
+*.swo
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# 系统生成文件
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+Desktop.ini
+# Linux
+*.directory
+.nfs*
+
+# 临时/日志文件
+*.log
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# 压缩包与安装包
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.exe
+*.dmg
+*.pkg
+
+# 构建/打包产物（若用打包工具如Vite/Webpack）
+dist/
+build/
+out/
+public/build/
+
+# 依赖文件夹（若用npm/yarn）
+node_modules/
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# 图片/资源临时文件
+*.psd
+*.ai
+*.sketch
