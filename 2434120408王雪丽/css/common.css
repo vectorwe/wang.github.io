@@ -1,0 +1,100 @@
+/* 全局公共样式：统一字体、颜色、导航、布局 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", "宋体", Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 头部样式：统一logo+导航 */
+.header {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+/* 导航栏样式统一 */
+.nav {
+    width: 100%;
+    background-color: #2c3e50;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    position: relative;
+}
+
+.nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover, .nav a.active {
+    background-color: #34495e;
+}
+
+/* 容器样式统一 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* 底部样式统一（覆盖load-html中的样式） */
+.footer {
+    width: 100%;
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.footer hr {
+    border: none;
+    border-top: 1px solid #fff;
+    margin: 10px auto;
+    width: 80%;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+}

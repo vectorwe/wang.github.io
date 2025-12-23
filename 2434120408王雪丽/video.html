@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河南文旅视频 - 数字文旅体验</title>
+    <!-- 引入公共样式+视频页面样式 -->
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/video.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 头部（统一使用公共导航） -->
+    <div class="header">
+        <!-- 新增logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="河南文旅logo" width="80" height="80">
+            <h1>逐鹿中原 · 河南文旅</h1>
+        </div>
+        <!-- 统一导航栏 -->
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="h1.html">文旅资源</a></li>
+                <li><a href="h2.html">非遗文化</a></li>
+                <li><a href="h3.html">特色民俗</a></li>
+                <li><a href="h4.html">数字文旅体验</a></li>
+                <li><a href="zhuce.html">用户注册</a></li>
+                <li><a href="video.html" class="active">文旅视频</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 视频播放区域 -->
+    <div class="video-container">
+        <h2>河南文旅形象宣传片</h2>
+        <p>视频时长：1分30秒 | 内容：河南文旅资源与数字体验展示</p>
+        <!-- 本地视频（mp4格式，1-2分钟） -->
+        <video controls poster="images/video/video_cover.jpg" width="80%">
+            <source src="media/henan_tour.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频播放，请升级浏览器！
+        </video>
+        <div class="video-desc">
+            <h3>视频简介</h3>
+            <p>本片展示了河南的自然景观、历史古迹、非遗文化与数字文旅体验项目，涵盖少林寺、龙门石窟、清明上河园等核心文旅资源，以及360°虚拟漫游、数字藏品等新兴体验形式，体现了河南“传统与现代融合”的文旅发展理念。</p>
+        </div>
+    </div>
+
+    <!-- 底部（统一加载） -->
+    <div id="footer-container"></div>
+    <script src="js/load-html.js"></script>
+    <script>
+        loadFooter('footer-container');
+    </script>
+    <!-- 引入回到顶部功能 -->
+    <script src="js/back-to-top.js"></script>
+</body>
+</html>

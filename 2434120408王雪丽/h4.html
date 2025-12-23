@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河南数字文旅体验网 - 数字中原·云游河南</title>
+    <!-- 分离CSS文件，移除内联样式 -->
+    <link href="css/h4.css" type="text/css" rel="stylesheet">
+     <!-- 引入外部JS文件（按执行顺序引入） -->
+    <script src="javaScript/carousel.js"></script>
+    <script src="javaScript/load-html.js"></script>
+    <!-- 引入字体图标（简化版，替代fa，避免外部依赖） -->
+   
+      
+</head>
+<body>
+    <!-- 页面头部：LOGO + 导航栏 -->
+    <div class="header">
+        <div class="logo">
+            <h1><i class="icon icon-landmark"></i> 河南数字文旅体验网</h1>
+        </div>
+    </div>
+
+    <!-- 主导航栏（与之前页面的导航结构统一） -->
+    <div class="nav-wrap">
+        <ul class="nav-list">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="h1.html">文旅资源</a></li>
+            <li><a href="h2.html">非遗文化</a></li>
+            <li><a href="h3.html">特色民俗</a></li>
+            <li><a href="h4.html" class="active">数字文旅体验项目</a></li>
+        </ul>
+    </div>
+
+    
+    <!-- 核心板块1：虚拟漫游专区 -->
+    <section id="roam" class="roam-section">
+        <div class="section-title">
+            <h2><i class="icon icon-vr"></i> 云游河南·360°虚拟漫游</h2>
+            <p>点击下方景点，进入沉浸式全景游览，感受河南文旅魅力</p>
+        </div>
+        <div class="roam-list">
+            <div class="roam-card">
+                <img src="images/longmen.jpg" alt="龙门石窟">
+                <div class="card-content">
+                    <h3>龙门石窟</h3>
+                    <span class="tag">360°全景 + 语音讲解</span>
+                    <p>中国四大石窟之一，石刻艺术的巅峰之作，一睹卢舍那大佛的风采</p>
+                    <a href="https://www.720yun.com/t/4cb28jpgxnw?scene_id=356163" target="_blank" class="btn">立即漫游</a>
+                </div>
+            </div>
+            <div class="roam-card">
+                <img src="images/h4/h4.2.jpg" alt="清明上河园">
+                <div class="card-content">
+                    <h3>清明上河园</h3>
+                    <span class="tag">360°全景漫游</span>
+                    <p>还原《清明上河图》的大宋盛景，沉浸式感受宋代市井文化</p>
+                    <a href= target="https://www.720yun.com/t/dcvkuw7h51e?scene_id=39821405" class="btn">立即漫游</a>
+                </div>
+            </div>
+            <div class="roam-card">
+                <img src="images/h4/h4.3.jpg" alt="少林寺">
+                <div class="card-content">
+                    <h3>少林寺</h3>
+                    <span class="tag">360°全景漫游</span>
+                    <p>天下第一名刹，体验少林功夫与禅意山水的完美融合</p>
+                    <a href=""https://www.720yun.com/t/70vkuw1wzqy?scene_id=40632014" target="_blank" class="btn">立即漫游</a>
+                </div>
+            </div>
+        </div>
+        <div class="roam-guide">
+            <h4>体验指南</h4>
+            <ul>
+                <li><i class="icon icon-mouse"></i> 全景游览：拖动鼠标调整视角，滚轮缩放画面</li>
+                <li><i class="icon icon-headphones"></i> 语音讲解：点击景点热点可收听专业讲解</li>
+                <li><i class="icon icon-mobile"></i> 设备建议：电脑/平板体验更佳，佩戴VR眼镜效果升级</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 核心板块2：数字藏品展示区（添加初级筛选JS） -->
+    <section id="collection" class="collection-section">
+        <div class="section-title">
+            <h2><i class="icon icon-gem"></i> 中原文创·数字藏品馆</h2>
+            <p>基于河南非遗、古迹、民俗打造的数字文创，收藏中原文化之美</p>
+        </div>
+        <div class="filter-tabs">
+            <button class="tab-btn active" data-type="all">全部藏品</button>
+            <button class="tab-btn" data-type="intangible">非遗藏品</button>
+            <button class="tab-btn" data-type="historic">古迹藏品</button>
+            <button class="tab-btn" data-type="folk">民俗藏品</button>
+        </div>
+        <div class="collection-list">
+            <div class="collection-card" data-type="intangible">
+                <img src="images/h4/h4.4.jpg" alt="钧瓷莲瓣瓶数字藏品">
+                <div class="card-content">
+                    <h3>钧瓷·莲瓣瓶数字藏品</h3>
+                    <div class="card-info">
+                        <span><i class="icon icon-tag"></i> 非遗类</span>
+                        <span><i class="icon icon-calendar"></i> 2024.05发行</span>
+                        <span><i class="icon icon-users"></i> 河南文旅厅×数字平台</span>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="collection-card" data-type="historic">
+                <img src="images/h4/h4.5.jpg" alt="龙门石窟卢舍那大佛数字典藏">
+                <div class="card-content">
+                    <h3>龙门石窟卢舍那大佛数字典藏</h3>
+                    <div class="card-info">
+                        <span><i class="icon icon-tag"></i> 古迹类</span>
+                        <span><i class="icon icon-calendar"></i> 2024.03发行</span>
+                        <span><i class="icon icon-users"></i> 龙门石窟景区×数字平台</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection-card" data-type="folk">
+                <img src="images/h4/h4.6.jpg" alt="朱仙镇年画·门神数字文创">
+                <div class="card-content">
+                    <h3>朱仙镇年画·门神数字文创</h3>
+                    <div class="card-info">
+                        <span><i class="icon icon-tag"></i> 民俗类</span>
+                        <span><i class="icon icon-calendar"></i> 2024.01发行</span>
+                        <span><i class="icon icon-users"></i> 开封文旅局×数字平台</span>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 辅助板块：河南文旅亮点速览 -->
+    <section id="highlight" class="highlight-section">
+        <div class="section-title">
+            <h2><i class="icon icon-star"></i> 河南文旅亮点速览</h2>
+        </div>
+        <div class="highlight-list">
+            <div class="highlight-item">
+                <i class="icon icon-mountain"></i>
+                <h3>自然景观</h3>
+                <p>云台山、老君山、丹江口水库、太行大峡谷</p>
+            </div>
+            <div class="highlight-item">
+                <i class="icon icon-university"></i>
+                <h3>人文古迹</h3>
+                <p>殷墟、白马寺、开封府、黄帝故里</p>
+            </div>
+            <div class="highlight-item">
+                <i class="icon icon-music"></i>
+                <h3>民俗文化</h3>
+                <p>豫剧、河南坠子、洛阳水席、浚县泥咕咕</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部加载 -->
+    <div id="footer-container"></div>
+<script src="javaScript/load-html.js"></script>
+    <script>
+      loadFooter('footer-container'); 
+    </script>
+   
+</body>
+</html>

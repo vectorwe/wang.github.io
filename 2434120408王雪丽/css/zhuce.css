@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* 全局样式重置（黑马初级知识：盒模型、默认样式清除） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 统一字体，延续河南文旅系列的华文行楷，添加降级 */
+    font-family: "华文行楷", STXingkai, SimHei, sans-serif;
+    /* 主背景色：延续之前的浅灰蓝，贴合整体风格 */
+    background-color: #f1f3f5;
+}
+
+/* 注册主容器：居中布局+白色背景，优化视觉层次 */
+.register-container {
+    width: 90%;
+    max-width: 700px; /* 限制最大宽度，适配大屏 */
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 注册标题样式：配色延续河南文旅的钧瓷红，居中 */
+.register-title {
+    font-size: 2rem; /* 30px转为rem，响应式 */
+    text-align: center;
+    background-color: #fff;
+    color: #d2691e; /* 钧瓷红，统一风格 */
+    margin-bottom: 0.5rem;
+}
+
+/* 标题分割线：优化配色为统一蓝色，居中 */
+.title-line {
+    width: 150px;
+    height: 5px;
+    background-color: #3498db; /* 统一蓝色，与之前页面一致 */
+    border: none; /* 清除默认边框 */
+    margin: 0 auto 2rem;
+}
+
+/* 板块子标题样式：配色优化为深蓝，统一间距 */
+.section-subtitle {
+    font-size: 1.5rem; /* 25px转为rem */
+    color: #006699; /* 深蓝，替换原有的#006 */
+    background-color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2; /* 修复原有的line-height:0问题 */
+}
+
+/* 注册须知表格样式：优化布局和配色 */
+.notice-table {
+    width: 100%;
+    border-collapse: collapse; /* 合并边框，修复原有的cellspacing问题 */
+    font-size: 1.25rem; /* 20px转为rem */
+    background-color: #fff;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden; /* 让边框圆角生效 */
+}
+
+/* 表格头部样式：统一蓝色背景，白色文字 */
+.table-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* 表格单元格样式：添加内边距，交替行背景色（优化可读性） */
+.notice-table td {
+    background-color: #fff;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.notice-table tr:nth-child(even) td {
+    background-color: #f9f9f9; /* 偶数行浅灰，提升阅读性 */
+}
+
+/* 表单样式：统一字体大小和背景 */
+.register-form {
+    font-size: 1.5rem; /* 25px转为rem */
+    background-color: #fff;
+}
+
+/* 表单项样式：弹性布局，优化对齐方式 */
+.form-item {
+    background-color: #fff;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap; /* 移动端换行 */
+    align-items: center;
+}
+
+/* 表单标签样式：固定宽度，优化对齐 */
+.form-item label {
+    background-color: #fff;
+    width: 80px; /* 固定标签宽度，替代原有的&nbsp; */
+    display: inline-block;
+}
+
+/* 表单输入框样式：优化尺寸和配色，统一风格 */
+.form-input {
+    width: calc(100% - 80px); /* 自适应剩余宽度 */
+    min-width: 280px; /* 移动端最小宽度 */
+    height: 35px;
+    font-size: 1.25rem; /* 25px转为rem，适配输入框 */
+    border: 1px solid #3498db; /* 统一蓝色边框 */
+    border-radius: 12px;
+    padding: 0 0.5rem; /* 添加内边距，优化输入体验 */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    background-color: #fff;
+}
+
+/* 单选框/复选框组样式：调整布局，取消固定间距 */
+.radio-group, .checkbox-group {
+    gap: 1rem; /* 间距替代&nbsp; */
+}
+
+.radio-group input, .checkbox-group input {
+    background-color: #fff;
+    width: auto; /* 取消输入框的宽度限制 */
+    margin-left: 0.5rem;
+}
+
+.radio-group label, .checkbox-group label {
+    width: auto; /* 取消标签固定宽度 */
+}
+
+/* 按钮组样式：弹性布局，统一间距 */
+.btn-group {
+    background-color: #fff;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem; /* 按钮间距 */
+    align-items: center;
+    padding-left: 80px; /* 与表单标签对齐 */
+}
+
+/* 提交按钮样式：优化配色，延续统一蓝色 */
+.submit-btn {
+    width: 150px;
+    height: 40px;
+    background-color: #3498db;
+    border: none; /* 清除默认边框 */
+    border-radius: 10px;
+    font-size: 1.5rem; /* 25px转为rem */
+    color: #fff; /* 白色文字，提升对比度 */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 过渡动画，优化交互 */
+}
+
+.submit-btn:hover {
+    background-color: #2980b9; /* 深蓝hover，统一风格 */
+}
+
+/* 重置按钮样式：优化配色，浅灰蓝 */
+.reset-btn {
+    width: 150px;
+    height: 40px;
+    background-color: #95a5a6;
+    border: none; /* 清除默认边框 */
+    border-radius: 10px;
+    font-size: 1.5rem; /* 25px转为rem */
+    color: #fff; /* 白色文字 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #7f8c8d; /* 深灰hover */
+}
+
+/* 媒体查询：移动端适配（黑马初级响应式知识） */
+@media screen and (max-width: 480px) {
+    .form-item {
+        flex-direction: column; /* 移动端垂直排列 */
+        align-items: flex-start;
+    }
+
+    .form-input {
+        width: 100%; /* 输入框占满宽度 */
+        min-width: unset;
+        margin-top: 0.5rem;
+    }
+
+    .btn-group {
+        padding-left: 0; /* 取消左侧内边距 */
+        flex-direction: column; /* 按钮垂直排列 */
+        width: 100%;
+    }
+
+    .submit-btn, .reset-btn {
+        width: 100%; /* 按钮占满宽度 */
+	}}

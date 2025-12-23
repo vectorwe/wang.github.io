@@ -1,0 +1,366 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "华文行楷", STXingkai, SimHei, sans-serif;
+      background-color: #f9f6f0;
+      font-size: 16px;
+    }
+
+    html {
+     
+      font-size: calc(100vw / 1920 * 16);
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+     color: #3498db;
+    }
+    .hand {
+      width: 95%;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    .active {
+     
+      background-color: #d2691e !important;
+      color: #fff !important;
+    }
+	.bodd{width: 100%;
+      height: auto;
+		}
+    .title {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .hand-title {
+      width: auto;
+      flex: 1;
+      min-width: 200px;
+      margin: 0 1rem;
+    }
+
+    .hand-title p {
+      font-size: 3vw;
+      line-height: 1.2;
+      margin: 0;
+      color: #8b4513;
+    }
+
+    .title_i {
+      font-size: 2.5vw;
+      color: #d2691e;
+    }
+
+    .but {
+      width: auto;
+      margin: 0 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .login-btn,
+    .zhuce-btn {
+      width: 6rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      text-align: center;
+      border-radius: 0.625rem;
+      color: #fff;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn {
+      background-color: #28a745;
+    }
+
+    .login-btn:hover {
+      background-color: #218838;
+      color: #fff;
+    }
+
+    .zhuce-btn {
+      background-color: #d2691e;
+    }
+
+    .zhuce-btn:hover {
+      background-color: #b35817;
+      color: #fff;
+    }
+
+    .ul {
+      background-color: #fff;
+      border-radius: 1.25rem;
+      width: 100%;
+      max-width: 1500px;
+      height: auto;
+      margin: 0 auto;
+      font-size: 1.875rem;
+      clear: both;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .ul ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      background-color: #fff;
+    }
+
+    .ul li,
+    .ul a {
+      background-color: #fff;
+    }
+
+    li {
+      background-color: #fff;
+      text-align: center;
+      list-style: none;
+      width: 8rem;
+      height: 3.75rem;
+      margin: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    li a {
+      display: block;
+      width: 100%;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-radius: 0.625rem;
+      transition: all 0.3s ease;
+    }
+
+    li a:hover {
+      color: #fff;
+      background-color: #3498db;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tu {
+      width: 95%;
+      max-width: 1500px;
+      margin: 1rem auto;
+      height: 50vw;
+      max-height: 450px;
+      clear: both;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .body {
+      width: 95%;
+      max-width: 1500px;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    .body1 {
+      height: auto;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .body_p {
+      font-size: 2.5vw;
+      min-font-size: 1.5rem;
+      text-align: center;
+      color: #8b4513;
+      margin: 1rem 0;
+      font-weight: bold;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #d2691e;
+      display: inline-block;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    .recommend-card,
+    .area-card {
+      background-color: #fff;
+      color: #000;
+      width: calc(33.33% - 2rem);
+      min-width: 280px;
+      height: auto;
+      min-height: 18.75rem;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .area-card {
+      min-height: 18.75rem;
+    }
+
+    .body_h3 {
+      background-color: #fff;
+      font-size: 1.875rem;
+      text-align: center;
+      color: #d2691e;
+      margin: 0.625rem 0;
+    }
+
+    .recommend-link,
+    .area-link {
+      padding: 0.9375rem;
+      background-color: #fff;
+      display: block;
+      height: 100%;
+    }
+
+    .recommend-link p,
+    .area-link p {
+      background-color: #fff;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-top: 0.625rem;
+      color: #555;
+    }
+
+    .recommend-card:hover,
+    .area-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .login-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 1.875rem;
+      border-radius: 1rem;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-item {
+      background-color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-item label {
+      background-color: #fff;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: #333;
+    }
+
+    .form-item input {
+      background-color: #fff;
+      width: 100%;
+      padding: 0.625rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+      font-size: 0.875rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-item input:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.625rem;
+      /* 优化配色：按钮采用中原蓝，与系列页面统一 */
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .hand-title p {
+        font-size: 5vw;
+      }
+
+      .title_i {
+        font-size: 4vw;
+      }
+
+      .body_p {
+        font-size: 4vw;
+      }
+
+      .recommend-card,
+      .area-card {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .ul li {
+        width: 7rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .title {
+        flex-direction: column;
+        align-items: center;
+      }
+
+
+      .hand-title {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .ul li {
+        width: 100%;
+        max-width: 200px;
+      }

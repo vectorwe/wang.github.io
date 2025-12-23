@@ -1,0 +1,510 @@
+@charset "utf-8";
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "华文行楷", STKaiti, SimSun, serif;
+}
+
+body {
+    background-color: #f9f6f0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 头部样式 */
+.header {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.title {
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 100px;
+    margin-bottom: 20px;
+}
+
+.title-tag {
+    font-size: 40px;
+}
+
+.nav {
+    background-color: #fff;
+    border-radius: 20px;
+    height: auto;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.nav li {
+    background-color: #fff;
+    width: clamp(120px, 15vw, 200px);
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin: 10px 20px;
+}
+
+.nav a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: clamp(18px, 2vw, 30px);
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 轮播图样式 */
+.carousel-wrap {
+    width: 80%;
+    height: 450px;
+    max-height: 500px;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 非遗总览样式 */
+.overview {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+}
+
+.overview h2 {
+    font-size: clamp(24px, 3vw, 30px);
+    margin: 20px 0 30px 0;
+    padding-left: 20px;
+    border-left: 4px solid #d2691e;
+}
+
+.overview-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.overview-text {
+    flex: 1;
+    min-width: 500px;
+    line-height: 1.8;
+    font-size: clamp(18px, 2vw, 25px);
+}
+
+.overview-text p {
+    margin-bottom: 20px;
+}
+
+.overview-data {
+    flex: 1;
+    min-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.data-item {
+    width: 250px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.data-item:hover {
+    transform: translateY(-5px);
+}
+
+.data-item h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.data-item p {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* 国家级非遗项目样式 */
+.heritage-list {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+}
+
+.heritage-list h2 {
+    font-size: clamp(24px, 3vw, 30px);
+    margin: 20px 0 30px 0;
+    padding-left: 20px;
+    border-left: 4px solid #d2691e;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    width: clamp(300px, 30vw, 400px);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+/* 非遗传承人样式 */
+.inheritor {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+}
+
+.inheritor h2 {
+    font-size: clamp(24px, 3vw, 30px);
+    margin: 20px 0 30px 0;
+    padding-left: 20px;
+    border-left: 4px solid #d2691e;
+}
+
+.inheritor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.inheritor-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.inheritor-item:hover {
+    transform: translateY(-5px);
+}
+
+.inheritor-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+    flex-shrink: 0;
+}
+
+.inheritor-info {
+    flex: 1;
+    min-width: 500px;
+}
+
+.inheritor-info h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.info-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    background-color: #e3f2fd;
+    color: #3498db;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.inheritor-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    font-style: italic;
+    color: #666;
+}
+
+/* 非遗活态传承样式 */
+.experience {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+}
+
+.experience h2 {
+    font-size: clamp(24px, 3vw, 30px);
+    margin: 20px 0 30px 0;
+    padding-left: 20px;
+    border-left: 4px solid #d2691e;
+}
+
+.experience-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.experience-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.experience-item ul {
+    list-style: disc inside;
+}
+
+.experience-item ul li {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.activity-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.activity-item h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.activity-item p {
+    font-size: 16px;
+}
+
+.cultural-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cultural-item {
+    text-align: center;
+}
+
+.cultural-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.cultural-item p {
+    font-size: 18px;
+}
+
+/* 非遗影像样式 */
+.video-section {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+}
+
+.video-section h2 {
+    font-size: clamp(24px, 3vw, 30px);
+    margin: 20px 0 30px 0;
+    padding-left: 20px;
+    border-left: 4px solid #d2691e;
+}
+
+.video-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.video-player {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-player video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+.video-desc {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.video-gallery {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-gallery h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-list img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-list img:hover {
+    transform: scale(1.05);
+}
+
+/* 底部样式 */
+footer {
+    background-color: #8b4513;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .overview-text,
+    .overview-data {
+        min-width: 100%;
+    }
+
+    .inheritor-info {
+        min-width: 100%;
+    }
+
+    .carousel-wrap {
+        height: 300px;
+        width: 95%;
+    }
+
+    .title {
+        font-size: clamp(30px, 5vw, 50px);
+        height: auto;
+        line-height: 1.2;
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .data-item {
+        width: 100%;
+    }
+
+    .carousel-wrap {
+        height: 200px;
+    }
+}

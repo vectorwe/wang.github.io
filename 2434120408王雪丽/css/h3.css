@@ -1,0 +1,282 @@
+@charset "utf-8";
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "华文行楷", STKaiti, SimSun, serif;
+    color: #333;
+    background-color: #f9f6f0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #d2691e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: clamp(20px, 3vw, 28px);
+    background-color: transparent;
+}
+
+.nav-sub ul {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.nav-sub li {
+    background-color: transparent;
+}
+
+.nav-sub a {
+    color: #fff;
+    font-size: clamp(14px, 2vw, 18px);
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.nav-sub a:hover {
+    background-color: #8b4513;
+}
+
+/* 主导航样式 */
+.nav-main {
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 1500px;
+    width: 90%;
+    height: auto;
+    margin: 15px auto;
+    font-size: clamp(16px, 2vw, 30px);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-main ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #fff;
+}
+
+.nav-main li {
+    background-color: #fff;
+    text-align: center;
+    width: clamp(120px, 15vw, 200px);
+    height: 60px;
+    line-height: 60px;
+    margin: 10px 0;
+}
+
+.nav-main a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.nav-main a:hover,
+.nav-main a.active {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 轮播图容器样式 */
+.carousel-wrap {
+    width: 80%;
+    height: 450px;
+    max-height: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 非遗亮点推荐样式 */
+.highlight {
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.highlight h2 {
+    font-size: clamp(24px, 4vw, 32px);
+    color: #8b4513;
+    margin-bottom: 30px;
+}
+
+.highlight-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.highlight-item {
+    width: clamp(250px, 30vw, 300px);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.highlight-item h3 {
+    font-size: 20px;
+    color: #d2691e;
+    margin-bottom: 10px;
+}
+
+.highlight-item p {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 民俗分类详情样式 */
+.folklore-section {
+    padding: 30px 50px;
+    margin: 0 auto 30px;
+    max-width: 1400px;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.folklore-section h2 {
+    font-size: clamp(22px, 3vw, 28px);
+    color: #8b4513;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f9f6f0;
+}
+
+.content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-item {
+    padding: 15px;
+    border-left: 4px solid #d2691e;
+    background-color: #f9f6f0;
+    border-radius: 0 5px 5px 0;
+}
+
+.content-item h3 {
+    font-size: 20px;
+    color: #d2691e;
+    margin-bottom: 10px;
+}
+
+.content-item p {
+    line-height: 1.8;
+    color: #555;
+    text-indent: 2em;
+}
+
+/* 底部样式 */
+footer {
+    background-color: #8b4513;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+footer p {
+
+    background-color: #8b4513;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .nav-sub ul {
+        gap: 15px;
+    }
+
+    .highlight {
+        padding: 20px 20px;
+    }
+
+    .folklore-section {
+        padding: 20px 20px;
+        width: 95%;
+    }
+
+    .carousel-wrap {
+        height: 300px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-main {
+        padding: 10px 0;
+    }
+
+    .nav-main li {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .folklore-section {
+        margin: 0 10px 20px;
+        padding: 15px 15px;
+    }
+
+    .highlight-item img {
+        height: 150px;
+    }
+
+    .carousel-wrap {
+        height: 200px;
+    }
+}
